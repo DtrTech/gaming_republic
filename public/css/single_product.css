@@ -9,8 +9,8 @@ section .row{
 .inner-header{
     height: 200px;
     width: 100%;
-    background: orange;
-    background-image: url("../img/background.jpg");
+    background: var(--clr-primary);
+    background-image: url("../img/background2.jpg");
     background-size: cover;
     background-position: center bottom;
 }

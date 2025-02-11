@@ -273,7 +273,7 @@ section .row{
 
 .product-section .product:hover{
     transform: scale(1);
-    box-shadow: 0 5px 10px rgba(255, 202, 138, 0.5)
+    box-shadow: 0 5px 10px rgba(255, 146, 146, 0.5)
 }
 
 .product-section .image-wrapper img{
@@ -296,7 +296,7 @@ section .row{
 }
 
 .product-section .product .product-options .price{
-    background: orange;
+    background: var(--clr-primary);
     color: white;
     font-size: 12px;
     font-weight: 700;
