@@ -10,8 +10,9 @@ section .row{
     height: 200px;
     width: 100%;
     background: var(--clr-primary);
-    background-image: url("../img/background2.jpg");
+    background-image: url("../img/background.png");
     background-size: cover;
+    background-color: linear-gradient(red red);
     background-position: center bottom;
 }
 
@@ -261,13 +262,13 @@ section .row{
 }
 
 .product-variants .variant:hover{
-    border: 2px solid rgba(226,147,0,0.15);
-    background: rgba(226,147,0,0.05)
+    border: 2px solid rgb(176 176 176 / 58%);   
+    background: rgb(147 147 147 / 5%);
 }
 
 .product-variants .variant.active, .product-variants .variant.active:hover{
     border: 2px solid var(--clr-primary);
-    background: rgba(226,147,0,0.15)
+    background: rgb(226 0 0 / 5%);
 }
 
 .product-variants .variant .variant-info{
@@ -319,7 +320,7 @@ section .row{
     background: white;
     border: none;
     background: var(--clr-primary);
-    color: black;
+    color: white;
     padding: 15px;
     width: 90%;
     margin: 0 5%;

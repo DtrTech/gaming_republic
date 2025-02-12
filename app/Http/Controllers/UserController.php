@@ -14,6 +14,8 @@ use App\Models\UserVerification;
 use App\Models\Product;
 use App\Models\ProductVariant;
 use App\Models\UserCart;
+use App\Models\Order;
+use App\Models\OrderItem;
 use App\Exceptions\Failed;
 use App\Mail\OTPEmail;
 use Exception;
@@ -276,41 +278,21 @@ class UserController extends Controller
             
             $products = [];
             foreach($carts as $cart){
-              
-           
-                    // Check if the product name already exists in the items array
-                    if (!isset($products['c'.$cart->short_name])) {
-                        // If not, initialize it as an array
-                        $products['c'.$cart->short_name] = ['name'=>$cart->product_name,'items'=>[]];
-                    }
-                
-                    // Add the current order item to the respective product_name group
-                    $products['c'.$cart->short_name]['items'][] = $cart->toArray();
-                
+                if (!isset($products['c'.$cart->short_name])) {
+                    $products['c'.$cart->short_name] = ['name'=>$cart->product_name,'items'=>[]];
+                }
+                $products['c'.$cart->short_name]['items'][] = $cart->toArray();
             }
 
-           
-         
             return view('cart')->with('carts',$products);
-
-          
-     
-
-            return response()->json(['success'=>true,'message'=>'loaded','carts'=>$carts]); 
-
-
-
         }
         catch(Failed $e){
             return response()->json(['success'=>false,'message'=>$e->getMessage()]);
   
         }
         catch(Exception $e){
-            return response()->json(['success'=>false,'message'=>$e->getMessage()]);
             return response()->json(['success'=>false,'message'=>'There is something wrong, please try again']);
-          
         }
-        
     }
 
     private function getCartDetail(UserCart $cart, ProductVariant $variant){
@@ -342,12 +324,6 @@ class UserController extends Controller
             if(!isset($request->quantity) || !is_numeric($request->quantity) || $request->quantity <= 0){
                 throw new Failed('Invalid quantity');
             }
-
-            
-
-
-
-
 
             $cart = UserCart::where('user_id', Auth::user()->id)->where('id',$request->cart)->first();
             if(!isset($cart)){
@@ -400,7 +376,6 @@ class UserController extends Controller
             return response()->json(['success'=>false,'message'=>'There is something wrong, please try again','action'=>false]);
           
         }
-        
     }
 
 
@@ -440,8 +415,50 @@ class UserController extends Controller
         
     }
 
+    function profile(){
+        return view('profile');
+    }
+
+    function change_password(){
+        return view('change_password');
+    }
+
+    function new_password(Request $request){
+        try{
+            if(!isset($request->current_password) || !isset($request->new_password) || !isset($request->re_new_password)){
+                throw new Failed('Invalid input.');
+            }
+
+            if ($request->new_password !== $request->re_new_password) {
+                throw new Failed('New password does not match.');
+            }
+
+            $user = User::find(Auth::user()->id);
+            if (!Hash::check($request->current_password, $user->password)) {
+                throw new Failed('Current password is incorrect.');
+            }
+            
+            $user->update(['password'=>Hash::make($request->new_password)]);
+            return response()->json(['success'=>true, 'message'=>'Password updated successfly.']);
+        }
+        catch(Failed $e){
+            return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
+        }
+        catch(Exception $e){
+            return response()->json(['success'=>false, 'message'=>'There is something wrong, please try again.']);
+        }
+    }
+
+    function order(Request $request){
+        $status = isset($request->status) && in_array($request->status, ['completed','refund','pending','failed']) ? $request->status : 'pending';
+        $page = isset($request->page) && is_numeric($request->page) ? $request->page : 1;
+        $limit = 1;
+        $orders = Order::where('user_id', Auth::user()->id)->where('status',$status)->orderBy('updated_at')->paginate($limit, ['*'], 'page', $page);
+        $max_page = $orders->lastPage();
 
 
+       return view('order', compact('orders','max_page','page','status'));
+    }
 
 
 

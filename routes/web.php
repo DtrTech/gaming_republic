@@ -28,6 +28,7 @@ Route::prefix('/user')->as('user.')->group(function() {
     Route::post('/add_to_cart', [App\Http\Controllers\UserController::class, 'add_to_cart'])->name('add_to_cart');
     Route::post('/update_cart_quantity', [App\Http\Controllers\UserController::class, 'update_cart_quantity'])->name('update_cart_quantity');
     Route::post('/drop_cart', [App\Http\Controllers\UserController::class, 'drop_cart'])->name('drop_cart');
+    Route::post('/new_password', [App\Http\Controllers\UserController::class, 'new_password'])->name('new_password');
 });
 
 Route::prefix('/products')->as('product.')->group(function() {
@@ -44,4 +45,14 @@ Route::prefix('/news')->as('news.')->group(function() {
     Route::get('/{news}', [App\Http\Controllers\NewsController::class, 'single'])->name('single');
 });
 
+Route::prefix('/promotion')->as('promotion.')->group(function() {
+    Route::get('/', [App\Http\Controllers\PromotionController::class, 'index'])->name('index');
+    Route::get('/{promotion}', [App\Http\Controllers\PromotionController::class, 'single'])->name('single');
+});
+
 Route::get('/cart', [App\Http\Controllers\UserController::class, 'load_cart'])->name('load_cart');
+Route::get('/profile', [App\Http\Controllers\UserController::class, 'profile'])->name('profile');
+Route::get('/order/{status?}/{page?}', [App\Http\Controllers\UserController::class, 'order'])->name('order');
+Route::get('/change_password', [App\Http\Controllers\UserController::class, 'change_password'])->name('change_password');
+
+Route::get('/order_history/{status}/{page}', [App\Http\Controllers\UserController::class, 'order_history'])->name('order_history');

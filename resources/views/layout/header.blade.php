@@ -4,7 +4,7 @@
             <img class="logo" src="{{ asset('img/logonew.png') }}"/>
             <a href="{{ route('home') }}">Home</a>
             <a href="{{ route('news.index') }}">News</a>
-            <a href="#">Promotions</a>
+            <a href="{{ route('promotion.index') }}">Promotions</a>
         </div>
 
         <div class="col col-left mobile">
