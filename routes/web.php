@@ -37,6 +37,7 @@ Route::prefix('/products')->as('product.')->group(function() {
 
 Route::prefix('/checkout')->as('checkout.')->group(function() {
     Route::post('/create', [App\Http\Controllers\CheckoutController::class, 'create'])->name('create');
+    Route::post('/create_multiple', [App\Http\Controllers\CheckoutController::class, 'create_multiple'])->name('create_multiple');
     Route::get('/single/{order}', [App\Http\Controllers\CheckoutController::class, 'single'])->name('single');
 });
 

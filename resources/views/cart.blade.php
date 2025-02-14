@@ -588,7 +588,6 @@
 
         $('.drop-cart').on('click',function(){
             let cart = $(this).closest('.sub-item').data('id');
-            console.log(cart);
             showLoading();
             $.ajax({
                 url: "{{ route('user.drop_cart') }}",
@@ -619,6 +618,37 @@
         });
 
         calculate_total();
+
+        $('#btn-checkout').on('click',function(){
+            $(this).prop('disabled', true);
+            showLoading();
+            $.ajax({
+                url: "{{ route('checkout.create_multiple') }}",
+                method: 'POST',
+                data: { items:selected },
+                headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                success: function(response) {
+                    if(response.success == true){
+                        if(response.redirect){
+                            window.location.href = response.redirect;
+                        }
+                        else{
+                            setDefaultSwal('error','','There is something wrong, please try again.');
+                        }
+                        
+                    }
+                    else{
+                        setDefaultSwal('error','',response.message);
+                    }
+                },
+                error: function() {
+                    setDefaultSwal('error','', "There is something wrong, please try again.");
+                },
+                complete: function(){
+                    hideLoading();
+                }
+            });
+        });
     });
 </script>
 @endif

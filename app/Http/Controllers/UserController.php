@@ -416,14 +416,23 @@ class UserController extends Controller
     }
 
     function profile(){
+        if(!Auth::check()){
+            return redirect()->route('home');
+        }
         return view('profile');
     }
 
     function change_password(){
+        if(!Auth::check()){
+            return redirect()->route('home');
+        }
         return view('change_password');
     }
 
     function new_password(Request $request){
+        if(!Auth::check()){
+            return redirect()->route('home');
+        }
         try{
             if(!isset($request->current_password) || !isset($request->new_password) || !isset($request->re_new_password)){
                 throw new Failed('Invalid input.');
@@ -450,16 +459,17 @@ class UserController extends Controller
     }
 
     function order(Request $request){
-        $status = isset($request->status) && in_array($request->status, ['completed','refund','pending','failed']) ? $request->status : 'pending';
+        if(!Auth::check()){
+            return redirect()->route('home');
+        }
+        $status = isset($request->status) && in_array($request->status, ['completed','refunded','pending','failed']) ? $request->status : 'pending';
         $page = isset($request->page) && is_numeric($request->page) ? $request->page : 1;
-        $limit = 1;
+        $limit = 10;
         $orders = Order::where('user_id', Auth::user()->id)->where('status',$status)->orderBy('updated_at')->paginate($limit, ['*'], 'page', $page);
+        foreach($orders as $order){
+            $order->items = OrderItem::where('order_id',$order->id)->select('product_name','variant_name','quantity','amount','discount','image')->orderBy('product_name')->get();    
+        }
         $max_page = $orders->lastPage();
-
-
-       return view('order', compact('orders','max_page','page','status'));
+        return view('order', compact('orders','max_page','page','status'));
     }
-
-
-
 }

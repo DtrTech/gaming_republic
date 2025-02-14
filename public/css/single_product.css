@@ -226,11 +226,14 @@ section .row{
     text-transform: uppercase;
     transition: 0.3s;
     font-size: 14px;
-    background: white;
     border: none;
     background: var(--clr-primary);
-    color: black;
+    color: white;
     padding: 15px;
+}
+
+#btn-add-to-cart svg{
+    fill: white
 }
 
 #btn-buy-now{

@@ -190,7 +190,6 @@
         let currentValue = parseInt(input.value);
         quantity = currentValue + 1;
         input.value = quantity;
-        console.log(quantity);  
         addItems();
     });
 
@@ -205,6 +204,11 @@
     });
 
     $(document).ready(function(){
+        $('#quantity').on('change', function(){
+            quantity = $(this).val();
+            addItems();
+        });
+
         $('.variant').on('click',function(){
             if($(this).data('id') == false){
                 return false;
@@ -288,6 +292,7 @@
     });
 
     function addItems(){
+        console.log('qweqwe');
         if(variant){
             $('#order-product').html(product.name);
             $('#order-variant').html(variant.name);

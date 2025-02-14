@@ -8,6 +8,17 @@
         gap: 15px;
         padding: 0 10px;
     }
+
+    #form-password{
+        max-width: 325px;
+    }
+
+    @media only screen and (max-width:768px){
+        #form-password{
+            max-width: 100%;
+            width: 100%;
+        }
+    }
 </style>
 @endsection
 
@@ -20,7 +31,7 @@
         <h2 class="title">Change Password</h2>
         <hr>
         <div class="profile-change-password">
-            <form id="form-password" enctype="multipart/form-data" style="max-width:325px">
+            <form id="form-password" enctype="multipart/form-data">
                 @csrf
                 <div class="input-field">
                     <label>Current Password:</label>
