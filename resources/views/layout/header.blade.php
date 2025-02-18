@@ -5,6 +5,8 @@
             <a href="{{ route('home') }}">Home</a>
             <a href="{{ route('news.index') }}">News</a>
             <a href="{{ route('promotion.index') }}">Promotions</a>
+            <a href="{{ route('about_us') }}">About Us</a>
+            <a href="{{ route('contact_us') }}">Contact Us</a>
         </div>
 
         <div class="col col-left mobile">
@@ -36,8 +38,10 @@
             @endif
         </div>
     </div>
-    <div class="search-wrapper">
-    <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+    <div class="search-wrapper" style="position: relative">
+       <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
         <input type="text" placeholder="Search" class="search" id="search"/>
+        <div id="search-results" class="hide"></div>
     </div>
+ 
 </header>

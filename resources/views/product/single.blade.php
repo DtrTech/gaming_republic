@@ -50,9 +50,9 @@
                     <div class="price-wrapper">
                         @if(isset($variant->discount) && $variant->discount > 0)
                         <div class="price">{{ env('CURRENCY','RM') }}{{ number_format($variant->price * (1 - $variant->discount / 100), 2) }} </div>
-                        <div class="price-before">{{ env('CURRENCY','RM') }}{{ number_format($variant->price, 2, ',', '') }}</div>
+                        <div class="price-before">{{ env('CURRENCY','RM') }}{{ number_format($variant->price, 2, '.', '') }}</div>
                         @else
-                        <div class="price">{{ env('CURRENCY','RM') }}{{ number_format($variant->price, 2, ',', '') }}</div>
+                        <div class="price">{{ env('CURRENCY','RM') }}{{ number_format($variant->price, 2, '.', '') }}</div>
                         @endif
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                         </button>
                         <button class="btn btn-hover-primary" id="btn-buy-now" type="button">Buy Now</button>
                         @else
-                        <button class="btn btn-hover-primary" id="btn-login-first" type="button">Login</button>
+                        <button class="btn btn-hover-primary" id="btn-login-first" onclick="$('#modal-login').show()" type="button">Login</button>
                         @endif
                     </div>
                 </div>

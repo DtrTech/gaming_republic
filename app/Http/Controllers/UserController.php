@@ -263,7 +263,7 @@ class UserController extends Controller
         try{
      
             if(!Auth::user()){
-                throw new Failed('Please login first.');
+                return redirect()->route('home');
             }
 
             $user = User::where('id', Auth::user()->id)->first();

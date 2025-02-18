@@ -436,7 +436,509 @@ class ProductVariantSeeder extends Seeder
                 'quantity'=>100,
                 'status'=>1,
                 'remarks'=>null 
-            ]
+            ],
+
+            [
+                'product_id'=>5,
+                'name'=>'Steam Wallet Code RM5',
+                'short_name'=>'steam-wallet-5',
+                'image'=>'steam_wallet_square.png',
+                'sku'=>'GRH005-01',
+                'description'=>null,
+                'price'=> 5.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>5,
+                'name'=>'Steam Wallet Code RM10',
+                'short_name'=>'steam-wallet-10',
+                'image'=>'steam_wallet_square.png',
+                'sku'=>'GRH005-02',
+                'description'=>null,
+                'price'=> 10.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>5,
+                'name'=>'Steam Wallet Code RM20',
+                'short_name'=>'steam-wallet-20',
+                'image'=>'steam_wallet_square.png',
+                'sku'=>'GRH005-03',
+                'description'=>null,
+                'price'=> 20.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>5,
+                'name'=>'Steam Wallet Code RM50',
+                'short_name'=>'steam-wallet-50',
+                'image'=>'steam_wallet_square.png',
+                'sku'=>'GRH005-04',
+                'description'=>null,
+                'price'=> 50.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>5,
+                'name'=>'Steam Wallet Code RM100',
+                'short_name'=>'steam-wallet-100',
+                'image'=>'steam_wallet_square.png',
+                'sku'=>'GRH005-05',
+                'description'=>null,
+                'price'=> 100.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>5,
+                'name'=>'Steam Wallet Code RM200',
+                'short_name'=>'steam-wallet-200',
+                'image'=>'steam_wallet_square.png',
+                'sku'=>'GRH005-06',
+                'description'=>null,
+                'price'=> 200.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM5',
+                'short_name'=>'razer-gold-5',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-01',
+                'description'=>null,
+                'price'=> 5.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM10',
+                'short_name'=>'razer-gold-10',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-02',
+                'description'=>null,
+                'price'=> 10.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM20',
+                'short_name'=>'razer-gold-20',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-03',
+                'description'=>null,
+                'price'=> 20.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM30',
+                'short_name'=>'razer-gold-30',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-04',
+                'description'=>null,
+                'price'=> 30.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM40',
+                'short_name'=>'razer-gold-40',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-05',
+                'description'=>null,
+                'price'=> 40.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM50',
+                'short_name'=>'razer-gold-50',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-06',
+                'description'=>null,
+                'price'=> 50.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM100',
+                'short_name'=>'razer-gold-100',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-07',
+                'description'=>null,
+                'price'=> 100.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM200',
+                'short_name'=>'razer-gold-200',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-08',
+                'description'=>null,
+                'price'=> 200.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM300',
+                'short_name'=>'razer-gold-300',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-09',
+                'description'=>null,
+                'price'=> 300.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>6,
+                'name'=>'Razer Gold RM500',
+                'short_name'=>'razer-gold-500',
+                'image'=>'razer_gold_square.png',
+                'sku'=>'GRH006-10',
+                'description'=>null,
+                'price'=> 500.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>7,
+                'name'=>'Gift Card Japan 500 Yen',
+                'short_name'=>'nintendo-500',
+                'image'=>'nintendo_ecard_square.png',
+                'sku'=>'GRH007-01',
+                'description'=>null,
+                'price'=> 17.50,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>7,
+                'name'=>'Gift Card Japan 1000 Yen',
+                'short_name'=>'nintendo-1000',
+                'image'=>'nintendo_ecard_square.png',
+                'sku'=>'GRH007-02',
+                'description'=>null,
+                'price'=> 35.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>7,
+                'name'=>'Gift Card Japan 2000 Yen',
+                'short_name'=>'nintendo-2000',
+                'image'=>'nintendo_ecard_square.png',
+                'sku'=>'GRH007-03',
+                'description'=>null,
+                'price'=> 70.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+
+            [
+                'product_id'=>7,
+                'name'=>'Gift Card Japan 3000 Yen',
+                'short_name'=>'nintendo-3000',
+                'image'=>'nintendo_ecard_square.png',
+                'sku'=>'GRH007-04',
+                'description'=>null,
+                'price'=> 105.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+
+            [
+                'product_id'=>7,
+                'name'=>'Gift Card Japan 5000 Yen',
+                'short_name'=>'nintendo-5000',
+                'image'=>'nintendo_ecard_square.png',
+                'sku'=>'GRH007-05',
+                'description'=>null,
+                'price'=> 175.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+
+            [
+                'product_id'=>7,
+                'name'=>'Gift Card Japan 9000 Yen',
+                'short_name'=>'nintendo-9000',
+                'image'=>'nintendo_ecard_square.png',
+                'sku'=>'GRH007-06',
+                'description'=>null,
+                'price'=> 315.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>8,
+                'name'=>'Gift Card MYR10',
+                'short_name'=>'gift-card-myr10',
+                'image'=>'google_gift_card_square.png',
+                'sku'=>'GRH008-01',
+                'description'=>null,
+                'price'=> 10.50,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            
+            [
+                'product_id'=>8,
+                'name'=>'Gift Card MYR20',
+                'short_name'=>'gift-card-myr20',
+                'image'=>'google_gift_card_square.png',
+                'sku'=>'GRH008-02',
+                'description'=>null,
+                'price'=> 20.50,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>8,
+                'name'=>'Gift Card MYR50',
+                'short_name'=>'gift-card-myr50',
+                'image'=>'google_gift_card_square.png',
+                'sku'=>'GRH008-03',
+                'description'=>null,
+                'price'=> 50.50,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>8,
+                'name'=>'Gift Card MYR100',
+                'short_name'=>'gift-card-myr100',
+                'image'=>'google_gift_card_square.png',
+                'sku'=>'GRH008-04',
+                'description'=>null,
+                'price'=> 100.50,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>8,
+                'name'=>'Gift Card MYR200',
+                'short_name'=>'gift-card-myr200',
+                'image'=>'google_gift_card_square.png',
+                'sku'=>'GRH008-04',
+                'description'=>null,
+                'price'=> 200.50,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>9,
+                'name'=>'GoCash US $5',
+                'short_name'=>'go-cash-5',
+                'image'=>'go_cash_square.png',
+                'sku'=>'GRH009-01',
+                'description'=>null,
+                'price'=> 25.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>9,
+                'name'=>'GoCash US $10',
+                'short_name'=>'go-cash-10',
+                'image'=>'go_cash_square.png',
+                'sku'=>'GRH009-02',
+                'description'=>null,
+                'price'=> 50.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>9,
+                'name'=>'GoCash US $15',
+                'short_name'=>'go-cash-15',
+                'image'=>'go_cash_square.png',
+                'sku'=>'GRH009-03',
+                'description'=>null,
+                'price'=> 75.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>9,
+                'name'=>'GoCash US $20',
+                'short_name'=>'go-cash-20',
+                'image'=>'go_cash_square.png',
+                'sku'=>'GRH009-04',
+                'description'=>null,
+                'price'=> 100.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>9,
+                'name'=>'GoCash US $50',
+                'short_name'=>'go-cash-50',
+                'image'=>'go_cash_square.png',
+                'sku'=>'GRH009-05',
+                'description'=>null,
+                'price'=> 250.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>9,
+                'name'=>'GoCash US $100',
+                'short_name'=>'go-cash-100',
+                'image'=>'go_cash_square.png',
+                'sku'=>'GRH009-06',
+                'description'=>null,
+                'price'=> 500.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            
+           
         ];
         ProductVariant::insert($variants);
     }

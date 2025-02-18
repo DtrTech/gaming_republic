@@ -64,6 +64,77 @@ class ProductSeeder extends Seeder
                 'image'=>'mobile_legends_adventure.png',
                 'status'=>1,
             ],
+
+            [
+                'name'=>'Steam Wallet Code (MYR)',
+                'short_name'=>'steam-wallet-code-my',
+                'description'=>'"<h4>Important</h4>\n<p>Steam users only allowed to redeem the Steam Wallet Code according to your original Steam Wallet\'s currency settings.</p>\n\n<h4>What is STEAM?</h4>\n<p>STEAM is one of the most popular gaming platforms to play your favourite games. Gamers can select from thousands of titles including bestsellers, indie hits, casual favourites, Dota 2 items, PUBG, CSGO, Team Fortress 2 items & more.</p>\n<p>With the Steam Wallet Codes, access to thousands of games - from Action to Indie and everything in between - is now super easy. Just add credit to your Steam account, which can be easily purchased here. You no longer need a credit card on Steam to add funds to your Steam Wallet. Works just like a gift certificate, redeem games, software and more on the Steam platform.</p><h4>What is Steam Wallet Code or Steam Gift Card?</h4>\n<p>Steam Wallet Code or Steam Gift Card is STEAM\'s prepaid card used to deposit and reload the stated value into your Steam Account balance, which you can use to buy your favourite games. Choose from all the best titles from current blockbusters, greatest hits, to the best of the independents.</p>"',
+                'short_description'=>'Steam Wallet Code (MYR) can be used to add balance to Steam Wallet. It is usable by all Valve Steam users with Malaysian Ringgit steam wallet.',
+                'guide'=>'"<h4>How to Redeem Steam Wallet Code?</h4>\n<ol>\n<li><a href=\"https://store.steampowered.com//login/\" target=\"blank\">Login</a> to your Steam account.</li>\n<li>Go to <a href=\"https://store.steampowered.com/steamaccount/addfunds\" target=\"blank\"> Redeem a Steam Wallet Code</a> page.</li>\n<li>Click Redeem a Steam Gift Card or Wallet Code.</li>\n<li>Enter the Steam Wallet Code and click Continue.</li>\n<li>The funds will be added to your account and be ready for use to buy games on STEAM!.</li></ol>"',
+                'others'=>null,
+                'tags'=>'Steam',
+                'sku'=>'GRH005',
+                'image'=>'steam.png',
+                'status'=>1,
+            ],
+
+            [
+                'name'=>'Razer Gold (MYR)',
+                'short_name'=>'razer-gold-my',
+                'description'=>'"<h4>About Razer Gold Malaysia</h4>\n<p>Razer Gold is the unified virtual credit for gamers worldwide. Use Razer Gold for over 2,500 games and entertainment content to buy games and in-game items.</p>"',
+                'short_description'=>'Get more bang for your buck with exclusive game deals and get rewarded with Razer Silver, the loyalty rewards program for gamers.',
+                'guide'=>'"<h4>How to use direct top-up with Razer Gold PIN?</h4>\n<ol>\n<li>You can top up by using Razer Gold PIN if the game supports Razer Pin direct top up as payment method.</li>\n<li>On the payment page, select Razer Gold PIN (or Direct Top-up).</li>\n<li>Depending on the game, it may require you to either insert your user id or to log in to your game account or enter your character information.</li>\n<li>Enter your Razer Gold Serial Number and PIN code.</li>\n<li>Follow the on-screen instructions.</li>\n<p>Remember to redeem your Razer Silver if you have an existing Razer Gold wallet or simply sign up for one <a href=\"https://razerid.razer.com/new\" target=\"_blank\">here</a>.</p></ol>"',
+                'others'=>null,
+                'tags'=>'Razer, Razer Gold',
+                'sku'=>'GRH006',
+                'image'=>'razer.png',
+                'status'=>1,
+            ],
+
+            [
+                'name'=>'Nintendo eShop Gift Card (JP)',
+                'short_name'=>'nintendo-eshop-card',
+                'description'=>'"<h4>Nintendo Switch Online</h4>\n<p>The Nintendo eShop Gift Card can also be used to begin a Nintendo Switch Online subscription. Here are the benefits of subscribing to Nintendo Switch Online:</p>\n <li>Play online with other players be it co-op or battle in games like Mario Kart and Super Smash Bros. Ultimate.</li>\n<li>Enjoy classic NES games with newly added online support! Titles are addded regularly.</li>\n<li>With your save data backed up regularly, you can easily retrive them anywhere, anytime.</li>\n<li>Enhance your Switch experience with the smartphone app that lets you voice call other players when playing online.</li>\n<li>Enjoy member-exclusive deals and purchase limited edition products!</li>"',
+                'short_description'=>'Buy a Nintendo eShop Gift Card NO and start shopping on the eShop! Redeem the gift card directly into your Nintendo account via Nintendo\'s, Nintendo Switch. Once redeemed, you can start buying any Nintendo games available on the eShop.',
+                'guide'=>'"<h4>How to redeem Nintendo eShop Gift Card?</h4>\n<ol>\n<li>Select the Nintendo eShop icon in the HOME menu.</li>\n<li>Scroll left and select \"Add Funds\".</li>\n<li>Select \"Redeem a Nintendo eShop Card\".</li>\n<li>Enter the 16-characters activation code, then select \"OK\" to complete the transaction.</li></p></ol>"',
+                'others'=>null,
+                'tags'=>'Nitendo',
+                'sku'=>'GRH007',
+                'image'=>'nintendo.png',
+                'status'=>1,
+            ],
+
+            [
+                'name'=>'Google Play Gift Card (MY)',
+                'short_name'=>'google-play-gift-card',
+                'description'=>'"<h4>About Google Play Gift Card Malaysia</h4>\n<p>Google Play Gift Card Malaysia is the prepaid top up card for Google Play Balance. It can be redeemed to pay for thousands of books, songs, movies, apps, magazines and many more on Google Play store.</p>\n<p>You can purchase it for yourself or gift it to your friends and family to show them that you are thinking of them. With the Google Play Gift Card, you do not have to worry if you\'re buying the right music album for your nephew or which books your aunt would like to read.</p>\n\n<h4>What can I buy with my Google Play Gift Card?</h4>\n<p>The Google Play Gift Card will give you access to the content available in the Google Store. This includes apps, games, movies, music and many other digital content.</p>\n<p>You will be able to access it anytime, anywhere via any web browser, Android device as well as other devices that are able to support the Google Play store. You can also download movies and TV shows for offline viewing.</p>"',
+                'short_description'=>'The Google Play Gift Card is so versatile that it\'s suitable for all ages, and all styles!',
+                'guide'=>'"<h4>How to Redeem Google Play Gift Card?</h4>\n<ol>\n<li>Open Google Play Store app.</li>\n<li>Touch the Menu icon on the top left corner.</li>\n<li>Tap Redeem on the Menu.</li>\n<li>Enter your code to redeem.</li></p></ol>"',
+                'others'=>null,
+                'tags'=>'Google Play',
+                'sku'=>'GRH008',
+                'image'=>'google_play.png',
+                'status'=>1,
+            ],
+
+            [
+                'name'=>'GoCash',
+                'short_name'=>'go-cash',
+                'description'=>'"<h4>About GoCash Game Card</h4>\n<p>GoCash Game Card is a currency of choice for gamers that wish to play online games like MMO, FPS, and much more. Users can connect to any GoCash supported content provider and play at leisure without difficulties, providing an easy way for users to access GoCash games from around the world.</p>\n<h4>Why use a GoCash Game Card?</h4>\n<p>With the GoCash Game Card, you will have access to global top rated online games. You will also be able to earn Gopoints and win free rewards with a GoCash membership.</p>\n<p>It’s not just easy, but safe, secure and risk-free. All you need to do is choose the amount that you wish to purchase, add to cart and complete the transaction with your preferred payment methods.</p>"',
+                'short_description'=>'GoCash Game Card is a global micro-transaction portal website company. ',
+                'guide'=>'"<h4>How to use GoCash Game Card?</h4>\n<ol>\n<li>Purchase a GoCash Game Card.</li>\n<li>Pick a game from GoCash Games or Go directly to game portal</li>\n<li>Select GoCash as Payment Option.</li><li>Enter your GoCash Game Card PIN number</li></ol>"',
+                'others'=>null,
+                'tags'=>'GoCash',
+                'sku'=>'GRH009',
+                'image'=>'go_cash.png',
+                'status'=>1,
+            ],
+
+           
+
+            
+
+
         ];
         Product::insert($products);
     }

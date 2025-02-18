@@ -127,7 +127,89 @@
                 });
             }
 
+            
+            function fetchProducts(query) {
+                $.ajax({
+                    url: "{{ route('product.search') }}",
+                    method: 'POST',
+                    data: {query:query},
+                    headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                    success: function(response) {
+                        displayResults(response.result);
+                    },
+                    error: function() {
+                        console.log('failed to get data from server.');
+                    },
+                    complete: function(){
+
+                        hideLoading();
+                    }
+                });
+            }
+
+            function displayResults(products) {
+                $('#search-results').html('');
+                console.log(products.length);
+                if(products.length < 1){
+                    $('#search-results').html('<p>No result found.</p>');
+                    $('#search-results').removeClass('hide')
+                }
+                else{
+                    products.forEach(function(product){
+                        console.log(product);
+                         // Generate correct product URL dynamically
+                let productUrl = `{{ route('product.view', ['product' => '__PRODUCT_SHORT_NAME__']) }}`.replace('__PRODUCT_SHORT_NAME__', product.short_name);
+
+// Create the product element
+let element = $(`
+                        <div class="result">
+    <a href="${productUrl}" class="product-item">
+       
+            <img src="{{ asset('img/products/') }}/${product.image}" alt="${product.name}" />
+            ${product.name}
+    </a>
+    </div>
+`);
+
+// Append the new element to the results container
+$('#search-results').append(element);
+                    });
+
+                    $('#search-results').removeClass('hide')
+                }
+                // const resultsDiv = document.getElementById("results");
+                // resultsDiv.innerHTML = products.map(product => 
+                //     `<div class="result-item">${product.name}</div>`).join("");
+            }
+
             $(document).ready(function(){
+                let debounceTimer;
+
+                $('#search').on('focus',function(){
+                    $(this).closest('.search-wrapper').addClass('active');
+                    
+                });
+
+                $("#search").on("input", function() {
+                    clearTimeout(debounceTimer);
+                    const query = this.value.trim();
+                    
+                    if (query.length === 0) {
+                        document.getElementById("results").innerHTML = "";
+                        return;
+                    }
+
+                    debounceTimer = setTimeout(() => {
+                        fetchProducts(query);
+                    }, 300);
+                });
+
+                $('#search').on('blur',function(){
+                   // $(this).closest('.search-wrapper').removeClass('active');
+                 //   $('#search-results').addClass('hide');
+                  //  $(this).val('');
+                });
+                
                 $('#btn-request-otp').on('click', function(event){
                     event.preventDefault();
                     
@@ -234,6 +316,13 @@
                         !toggleButton.contains(event.target)
                     ) {
                         hideSidebar();
+                    }
+
+                    if (!$(event.target).closest(".search-wrapper").length) {
+                        $("#search-results").addClass("hide");
+                        $('.search-wrapper').removeClass('active');
+                        $('.search-wrapper').val();
+                        
                     }
                 });
 

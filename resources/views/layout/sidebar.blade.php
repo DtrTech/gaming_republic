@@ -10,6 +10,8 @@
         <a href="{{ route('home') }}">Home</a>
         <a href="{{ route('promotion.index') }}">Promotions</a>
         <a href="{{ route('news.index') }}">News</a>
+        <a href="{{ route('about_us') }}">About Us</a>
+        <a href="{{ route('contact_us') }}">Contact Us</a>
         <a href="{{ route('order') }}">My Orders</a>
         <a href="{{ route('load_cart') }}">My Carts</a>
 

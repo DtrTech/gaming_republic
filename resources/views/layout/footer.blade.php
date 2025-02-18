@@ -1,8 +1,13 @@
 <footer>
     <div class="row">
         <div class="col">
-            <h4>Gaming Republic Hub</h4>
+            
             <img class="logo" src="{{ asset('img/logo.png') }}">
+        </div>
+        <div class="col">
+            <h4>About GRH</h4>
+            <a href="{{ route('about_us') }}">About Us</a>
+            <a href="{{ route('contact_us') }}">Contact Us</a>
         </div>
         <div class="col">
             <h4>Links</h4>
@@ -12,10 +17,9 @@
         </div>
         <div class="col">
             <h4>Terms & Policies</h4>
-            <a href="{{ route('home') }}">Terms & Policies</a>
-            <a href="{{ route('news.index') }}">Terms of Service</a>
-            <a href="{{ route('promotion.index') }}">Cookie Notice</a>
-            <a href="{{ route('promotion.index') }}">Privacy Notice</a>
+            <a href="{{ route('tnc.terms_of_services') }}">Terms of Service</a>
+            <a href="{{ route('tnc.cookies_notice') }}">Cookie Notice</a>
+            <a href="{{ route('tnc.privacy_notice') }}">Privacy Notice</a>
         </div>
     </div>
     <div class="row" style="margin:0 auto">

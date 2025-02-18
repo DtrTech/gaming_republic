@@ -52,4 +52,13 @@ class ProductController extends Controller
         }
     }
 
+    public function search(Request $request){
+        try{
+            $products = Product::where('name','like','%'.$request->input('query').'%')->select('name','short_name','image')->get();
+            return response()->json(['result'=>$products]);
+        }
+        catch(Expection $e){
+            return response()->json(['result'=>[]]);
+        }
+    }
 }

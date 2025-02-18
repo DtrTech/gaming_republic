@@ -105,11 +105,98 @@ header .search-wrapper .search{
     outline: none;
     border-radius: 25px;
     padding: 5px 15px;
-    line-height:1
+    line-height:1;
+    transition: 0.3s;
+}
+
+header .search-wrapper.active .search{
+    width: 500px;
+    max-width: 90%;
+    border-radius: var(--radius) var(--radius) 0 0;
+    border: 1px solid var(--clr-primary);
+    border-bottom:0;
 }
 
 header .search-wrapper svg > *{
     color: white
+}
+
+header .search-wrapper.active svg{
+    display:none;
+}
+
+#search-results{
+
+    width: 500px; 
+    max-width: calc(90% - 18px); 
+    border:1px solid var(--clr-primary);
+    border-radius: 0 0 var(--radius) var(--radius);
+    position:absolute; 
+    z-index: 55;
+    top: calc(100% - 10px);
+    background: #f1f1f1;
+ 
+    overflow: auto;
+  
+    max-height: 500px;
+    border-top: 0;
+}
+
+#search-results > div{
+
+    display: flex;
+
+   
+    color: black;
+
+    border-bottom: 1px solid #cfcfcf;
+    padding: 5px;
+    
+}
+
+
+#search-results > div:last-of-type{
+
+    margin-bottom: 0;
+    border-bottom: 0
+}
+
+#search-results a{
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    padding: 10px;
+  
+   
+   border-radius: var(--radius);
+    transition: 0.3s
+}
+
+#search-results a:hover{
+
+   background: white
+
+}
+
+
+
+#search-results p{
+    color: var(--clr-txt-primary);
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    padding: 10px;
+}
+
+#search-results a img{
+
+   height: 48px;
+   width: auto;
+   border-radius: var(--radius)
 }
 
 header .col .col{
@@ -602,7 +689,8 @@ footer .row{
     gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%
+    width: 100%;
+    justify-content: space-between;
 }
 
 footer p{
@@ -629,7 +717,7 @@ footer .row .col h4{
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 10px;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #363636;
     padding-bottom: 10px;
     line-height: 1;
     font-weight: 700
@@ -715,7 +803,6 @@ footer .row .col a:hover{
 
     footer .logo {
         width: 60%;
-        margin: auto;
     }
 
     footer p{
