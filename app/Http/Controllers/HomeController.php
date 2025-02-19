@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\ProductVariant;
 use App\Models\ContactForm;
 use App\Exceptions\Failed;
+use App\Jobs\ReceivedInquiryJob;
 use Exception;
 
 class HomeController extends Controller
@@ -67,8 +68,7 @@ class HomeController extends Controller
                 'message'=>$request->input('message')
             ]);
 
-            // do other
-            $this->sendConfirmReceivedEmail($request->input('name'),  $request->input('message'), $request->input('email'));
+            dispatch(new ReceivedInquiryJob($request->input('name'),  $request->input('message'), $request->input('email')));
             return response()->json(['success'=>true,'message'=>'Thank you for reaching out! We have received your message and will get back to you shortly.']);
 
 

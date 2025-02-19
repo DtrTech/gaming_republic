@@ -16,8 +16,8 @@ use App\Models\ProductVariant;
 use App\Models\UserCart;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Jobs\SendOtpJob;
 use App\Exceptions\Failed;
-use App\Mail\OTPEmail;
 use Exception;
 use Carbon\Carbon;
 
@@ -150,7 +150,7 @@ class UserController extends Controller
                 ]);
             }
 
-            $this->sendOtpEmail($code,$request->email);
+            dispatch(new SendOtpJob($code,$request->email));
             return response()->json(['success'=>true, 'message'=>'OTP has been sent to '.$request->email]);
         }
 

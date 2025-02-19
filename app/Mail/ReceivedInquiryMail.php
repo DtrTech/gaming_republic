@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ContactReceived extends Mailable
+class ReceivedInquiryMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -21,6 +21,6 @@ class ContactReceived extends Mailable
     public function build()
     {
         return $this->subject('Inquiry Received')
-                    ->view('email.contact_received')->with(['name' => $this->name, 'content'=>$this->content]);
+                    ->view('email.received_inquiry')->with(['name' => $this->name, 'content'=>$this->content]);
     }
 }
