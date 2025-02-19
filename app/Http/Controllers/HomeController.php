@@ -68,7 +68,7 @@ class HomeController extends Controller
             ]);
 
             // do other
-            $this->sendConfirmReceivedEmail($request->input('name'), $request->input('email'), $request->input('message'));
+            $this->sendConfirmReceivedEmail($request->input('name'),  $request->input('message'), $request->input('email'));
             return response()->json(['success'=>true,'message'=>'Thank you for reaching out! We have received your message and will get back to you shortly.']);
 
 
@@ -77,6 +77,7 @@ class HomeController extends Controller
             return response()->json(['success'=>false,'message'=>$e->getMessage()]);
         }
         catch(Exception $e){
+            return response()->json(['success'=>false,'message'=>$e->getMessage()]);
             return response()->json(['success'=>false,'message'=>'There is something wrong, please try again.']);
         }
         $products = Product::where('status',1)->select('id','name','image','short_name')->get();
