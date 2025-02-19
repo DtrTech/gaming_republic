@@ -150,7 +150,7 @@ class UserController extends Controller
                 ]);
             }
 
-            dispatch(new SendOtpJob($code,$request->email));
+            dispatch(new SendOtpJob($code,$request->email))->onQueue('emails');
             return response()->json(['success'=>true, 'message'=>'OTP has been sent to '.$request->email]);
         }
 
@@ -158,7 +158,7 @@ class UserController extends Controller
             return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
         }
         catch(Exception $e){
-            return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
+           // return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
             return response()->json(['success'=>false, 'message'=>'There is something wrong, please try again.']);
         }
     }
