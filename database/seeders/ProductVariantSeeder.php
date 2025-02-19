@@ -937,8 +937,879 @@ class ProductVariantSeeder extends Seeder
                 'remarks'=>null 
             ],
 
-            
-           
+            [
+                'product_id'=>10,
+                'name'=>'3000 WON Nexon Cash',
+                'short_name'=>'nexon-cash-3000',
+                'image'=>'nexon_cash_square.png',
+                'sku'=>'GRH010-01',
+                'description'=>null,
+                'price'=> 10.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>10,
+                'name'=>'5000 WON Nexon Cash',
+                'short_name'=>'nexon-cash-5000',
+                'image'=>'nexon_cash_square.png',
+                'sku'=>'GRH010-02',
+                'description'=>null,
+                'price'=> 18.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>10,
+                'name'=>'10000 WON Nexon Cash',
+                'short_name'=>'nexon-cash-10000',
+                'image'=>'nexon_cash_square.png',
+                'sku'=>'GRH010-03',
+                'description'=>null,
+                'price'=> 36.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>10,
+                'name'=>'30000 WON Nexon Cash',
+                'short_name'=>'nexon-cash-30000',
+                'image'=>'nexon_cash_square.png',
+                'sku'=>'GRH010-04',
+                'description'=>null,
+                'price'=> 108.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>10,
+                'name'=>'50000 WON Nexon Cash',
+                'short_name'=>'nexon-cash-50000',
+                'image'=>'nexon_cash_square.png',
+                'sku'=>'GRH010-05',
+                'description'=>null,
+                'price'=> 180.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>11,
+                'name'=>'11 Diamonds Pin',
+                'short_name'=>'mobile-legend-pin-11',
+                'image'=>'mobile_legends_pin_square.png',
+                'sku'=>'GRH011-01',
+                'description'=>null,
+                'price'=> 1.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>11,
+                'name'=>'55 Diamonds Pin',
+                'short_name'=>'mobile-legend-pin-55',
+                'image'=>'mobile_legends_pin_square.png',
+                'sku'=>'GRH011-02',
+                'description'=>null,
+                'price'=> 5.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>11,
+                'name'=>'275 Diamonds Pin',
+                'short_name'=>'mobile-legend-pin-275',
+                'image'=>'mobile_legends_pin_square.png',
+                'sku'=>'GRH011-03',
+                'description'=>null,
+                'price'=> 23.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>11,
+                'name'=>'565 Diamonds Pin',
+                'short_name'=>'mobile-legend-pin-565',
+                'image'=>'mobile_legends_pin_square.png',
+                'sku'=>'GRH011-04',
+                'description'=>null,
+                'price'=> 46.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>11,
+                'name'=>'1155 Diamonds Pin',
+                'short_name'=>'mobile-legend-pin-1155',
+                'image'=>'mobile_legends_pin_square.png',
+                'sku'=>'GRH011-05',
+                'description'=>null,
+                'price'=> 92.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>11,
+                'name'=>'1765 Diamonds Pin',
+                'short_name'=>'mobile-legend-pin-1765',
+                'image'=>'mobile_legends_pin_square.png',
+                'sku'=>'GRH011-06',
+                'description'=>null,
+                'price'=> 138.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>11,
+                'name'=>'2975 Diamonds Pin',
+                'short_name'=>'mobile-legend-pin-2975',
+                'image'=>'mobile_legends_pin_square.png',
+                'sku'=>'GRH011-07',
+                'description'=>null,
+                'price'=> 230.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>11,
+                'name'=>'6000 Diamonds Pin',
+                'short_name'=>'mobile-legend-pin-6000',
+                'image'=>'mobile_legends_pin_square.png',
+                'sku'=>'GRH011-08',
+                'description'=>null,
+                'price'=> 460.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>11,
+                'name'=>'12000 Diamonds Pin',
+                'short_name'=>'mobile-legend-pin-12000',
+                'image'=>'mobile_legends_pin_square.png',
+                'sku'=>'GRH011-09',
+                'description'=>null,
+                'price'=> 920.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>5,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>12,
+                'name'=>'PSN Card RM30',
+                'short_name'=>'psn-30',
+                'image'=>'playstation_network_card_square.png',
+                'sku'=>'GRH012-01',
+                'description'=>null,
+                'price'=> 31.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>12,
+                'name'=>'PSN Card RM50',
+                'short_name'=>'psn-50',
+                'image'=>'playstation_network_card_square.png',
+                'sku'=>'GRH012-02',
+                'description'=>null,
+                'price'=> 51.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>12,
+                'name'=>'PSN Card RM100',
+                'short_name'=>'psn-100',
+                'image'=>'playstation_network_card_square.png',
+                'sku'=>'GRH012-03',
+                'description'=>null,
+                'price'=> 101.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>12,
+                'name'=>'PSN Card RM200',
+                'short_name'=>'psn-200',
+                'image'=>'playstation_network_card_square.png',
+                'sku'=>'GRH012-04',
+                'description'=>null,
+                'price'=> 201.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>12,
+                'name'=>'PSN Card RM250',
+                'short_name'=>'psn-250',
+                'image'=>'playstation_network_card_square.png',
+                'sku'=>'GRH012-05',
+                'description'=>null,
+                'price'=> 251.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>12,
+                'name'=>'PSN Card RM300',
+                'short_name'=>'psn-300',
+                'image'=>'playstation_network_card_square.png',
+                'sku'=>'GRH012-06',
+                'description'=>null,
+                'price'=> 301.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>13,
+                'name'=>'Free Fire Max 100 Diamonds',
+                'short_name'=>'free-fire-max-100',
+                'image'=>'free_fire_max_diamonds_square.png',
+                'sku'=>'GRH013-01',
+                'description'=>null,
+                'price'=> 5.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>13,
+                'name'=>'Free Fire Max 210 Diamonds',
+                'short_name'=>'free-fire-max-210',
+                'image'=>'free_fire_max_diamonds_square.png',
+                'sku'=>'GRH013-02',
+                'description'=>null,
+                'price'=> 10.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>13,
+                'name'=>'Free Fire Max 530 Diamonds',
+                'short_name'=>'free-fire-max-530',
+                'image'=>'free_fire_max_diamonds_square.png',
+                'sku'=>'GRH013-03',
+                'description'=>null,
+                'price'=> 25.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>13,
+                'name'=>'Free Fire Max 1080 Diamonds',
+                'short_name'=>'free-fire-max-1080',
+                'image'=>'free_fire_max_diamonds_square.png',
+                'sku'=>'GRH013-04',
+                'description'=>null,
+                'price'=> 50.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>13,
+                'name'=>'Free Fire Max 2200 Diamonds',
+                'short_name'=>'free-fire-max-2200',
+                'image'=>'free_fire_max_diamonds_square.png',
+                'sku'=>'GRH013-05',
+                'description'=>null,
+                'price'=> 90.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>14,
+                'name'=>'Eudemons Point Card US0.99',
+                'short_name'=>'eudemons-099',
+                'image'=>'eudemons_point_square.png',
+                'sku'=>'GRH014-01',
+                'description'=>null,
+                'price'=> 4.50,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>14,
+                'name'=>'Eudemons Point Card US1.99',
+                'short_name'=>'eudemons-199',
+                'image'=>'eudemons_point_square.png',
+                'sku'=>'GRH014-02',
+                'description'=>null,
+                'price'=> 8.90,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>14,
+                'name'=>'Eudemons Point Card US4.99',
+                'short_name'=>'eudemons-499',
+                'image'=>'eudemons_point_square.png',
+                'sku'=>'GRH014-03',
+                'description'=>null,
+                'price'=> 22.30,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>14,
+                'name'=>'Eudemons Point Card US7.99',
+                'short_name'=>'eudemons-1',
+                'image'=>'eudemons_point_square.png',
+                'sku'=>'GRH014-04',
+                'description'=>null,
+                'price'=> 35.60,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>14,
+                'name'=>'Eudemons Point Card US15.99',
+                'short_name'=>'eudemons-1599',
+                'image'=>'eudemons_point_square.png',
+                'sku'=>'GRH014-05',
+                'description'=>null,
+                'price'=> 71.25,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>14,
+                'name'=>'Eudemons Point Card US29.99',
+                'short_name'=>'eudemons-1',
+                'image'=>'eudemons_point_square.png',
+                'sku'=>'GRH014-06',
+                'description'=>null,
+                'price'=> 133.50,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>14,
+                'name'=>'Eudemons Point Card US59.99',
+                'short_name'=>'eudemons-5999',
+                'image'=>'eudemons_point_square.png',
+                'sku'=>'GRH014-07',
+                'description'=>null,
+                'price'=> 267.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>15,
+                'name'=>'Cherry Credits 5000 CC',
+                'short_name'=>'cherry-credits-5000',
+                'image'=>'cherry_credits_square.png',
+                'sku'=>'GRH015-01',
+                'description'=>null,
+                'price'=> 17.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>15,
+                'name'=>'Cherry Credits 10000 CC',
+                'short_name'=>'cherry-credits-10000',
+                'image'=>'cherry_credits_square.png',
+                'sku'=>'GRH015-02',
+                'description'=>null,
+                'price'=> 34.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>15,
+                'name'=>'Cherry Credits 30000 CC',
+                'short_name'=>'cherry-credits-30000',
+                'image'=>'cherry_credits_square.png',
+                'sku'=>'GRH015-03',
+                'description'=>null,
+                'price'=> 102.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>15,
+                'name'=>'Cherry Credits 50000 CC',
+                'short_name'=>'cherry-credits-50000',
+                'image'=>'cherry_credits_square.png',
+                'sku'=>'GRH015-04',
+                'description'=>null,
+                'price'=> 170.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>15,
+                'name'=>'Cherry Credits 100000 CC',
+                'short_name'=>'cherry-credits-100000',
+                'image'=>'cherry_credits_square.png',
+                'sku'=>'GRH015-05',
+                'description'=>null,
+                'price'=> 340.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>100,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 30pts MY',
+                'short_name'=>'mycard-30',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-01',
+                'description'=>null,
+                'price'=> 4.20,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 50pts MY',
+                'short_name'=>'mycard-50',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-02',
+                'description'=>null,
+                'price'=> 7.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 90pts MY',
+                'short_name'=>'mycard-90',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-03',
+                'description'=>null,
+                'price'=> 12.60,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 150pts MY',
+                'short_name'=>'mycard-150',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-04',
+                'description'=>null,
+                'price'=> 21.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 170pts MY',
+                'short_name'=>'mycard-170',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-05',
+                'description'=>null,
+                'price'=> 23.80,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 300pts MY',
+                'short_name'=>'mycard-300',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-06',
+                'description'=>null,
+                'price'=> 42.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 350pts MY',
+                'short_name'=>'mycard-350',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-07',
+                'description'=>null,
+                'price'=> 49.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 400pts MY',
+                'short_name'=>'mycard-400',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-08',
+                'description'=>null,
+                'price'=> 56.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 450pts MY',
+                'short_name'=>'mycard-450',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-09',
+                'description'=>null,
+                'price'=> 63.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 500pts MY',
+                'short_name'=>'mycard-500',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-10',
+                'description'=>null,
+                'price'=> 70.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 750pts MY',
+                'short_name'=>'mycard-750',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-11',
+                'description'=>null,
+                'price'=> 105.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 1000pts MY',
+                'short_name'=>'mycard-1000',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-12',
+                'description'=>null,
+                'price'=> 140.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 1150pts MY',
+                'short_name'=>'mycard-1150',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-13',
+                'description'=>null,
+                'price'=> 161.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 1490pts MY',
+                'short_name'=>'mycard-1490',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-14',
+                'description'=>null,
+                'price'=> 208.60,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 1690pts MY',
+                'short_name'=>'mycard-1690',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-15',
+                'description'=>null,
+                'price'=> 236.60,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 2000pts MY',
+                'short_name'=>'mycard-2000',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-16',
+                'description'=>null,
+                'price'=> 280.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 2500pts MY',
+                'short_name'=>'mycard-2500',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-17',
+                'description'=>null,
+                'price'=> 350.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 3000pts MY',
+                'short_name'=>'mycard-3000',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-18',
+                'description'=>null,
+                'price'=> 420.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>10,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 3290pts MY',
+                'short_name'=>'mycard-3290',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-19',
+                'description'=>null,
+                'price'=> 460.60,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>0,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 5000pts MY',
+                'short_name'=>'mycard-5000',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-20',
+                'description'=>null,
+                'price'=> 700.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>10,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+            [
+                'product_id'=>16,
+                'name'=>'MyCard iPoint 10000pts MY',
+                'short_name'=>'mycard-10000',
+                'image'=>'mycard_my_square.png',
+                'sku'=>'GRH016-21',
+                'description'=>null,
+                'price'=> 1400.00,
+                'discount'=>0,
+                'tag'=>null,
+                'quantity'=>10,
+                'status'=>1,
+                'remarks'=>null 
+            ],
+
+
+
+
         ];
         ProductVariant::insert($variants);
     }

@@ -25,6 +25,7 @@ class ProductSeeder extends Seeder
                 'sku'=>'GRH001',
                 'image'=>'garena_shells.png',
                 'status'=>1,
+                'label'=>'best'
             ],
             [
                 'name'=>'Conquer Online',
@@ -37,6 +38,7 @@ class ProductSeeder extends Seeder
                 'sku'=>'GRH002',
                 'image'=>'conquer_online.png',
                 'status'=>1,
+                'label'=>'trend'
             ],
 
             [
@@ -50,6 +52,7 @@ class ProductSeeder extends Seeder
                 'sku'=>'GRH003',
                 'image'=>'honor_of_kings.png',
                 'status'=>1,
+                'label'=>'best'
             ],
 
             [
@@ -63,6 +66,7 @@ class ProductSeeder extends Seeder
                 'sku'=>'GRH004',
                 'image'=>'mobile_legends_adventure.png',
                 'status'=>1,
+                'label'=>'best'
             ],
 
             [
@@ -76,6 +80,7 @@ class ProductSeeder extends Seeder
                 'sku'=>'GRH005',
                 'image'=>'steam.png',
                 'status'=>1,
+                'label'=>'best'
             ],
 
             [
@@ -89,6 +94,7 @@ class ProductSeeder extends Seeder
                 'sku'=>'GRH006',
                 'image'=>'razer.png',
                 'status'=>1,
+                'label'=>'trend'
             ],
 
             [
@@ -102,6 +108,7 @@ class ProductSeeder extends Seeder
                 'sku'=>'GRH007',
                 'image'=>'nintendo.png',
                 'status'=>1,
+                'label'=>'trend'
             ],
 
             [
@@ -115,6 +122,7 @@ class ProductSeeder extends Seeder
                 'sku'=>'GRH008',
                 'image'=>'google_play.png',
                 'status'=>1,
+                'label'=>'best'
             ],
 
             [
@@ -128,13 +136,105 @@ class ProductSeeder extends Seeder
                 'sku'=>'GRH009',
                 'image'=>'go_cash.png',
                 'status'=>1,
+                'label'=>'trend'
             ],
 
-           
+            [
+                'name'=>'Nexon Cash Card',
+                'short_name'=>'nexon-cash-card',
+                'description'=>'"<h4>About Nexon Cash Card</h4>\n<p>It can be used to purchase Nexon Cash, which is the virtual currency used in various online games developed by Nexon. Players can use Nexon Cash to buy in-game items, customization options, or other virtual goods within the games.</p>\n<p>Moreover, the Nexon Game Card or formerly known as Karma Koin is accepted by over 15 different game publishers, so you can use this gift card for a variety of different games. Players who have bought a Karma Koin gift card in the past can continue to use it just like a Nexon Game Card.</p>\n"',
+                'short_description'=>'Nexon Game Card is a form of prepaid game card that could be used as an alternative to credit cards when shopping for gaming products.',
+                'guide'=>'"<h4>How to Redeem Nexon Game Card?</h4>\n<ol>\n<li>Visit the website of the game you want to redeem your codes for.</li>\n<li>Select Nexon Game Card as the payment option during checkout.</li>\n<li>Follow the instructions given.</li></ol>"',
+                'others'=>null,
+                'tags'=>'Nexon',
+                'sku'=>'GRH010',
+                'image'=>'nexon_cash_card.png',
+                'status'=>1,
+                'label'=>'trend'
+            ],
 
+            [
+                'name'=>'Mobile Legends Diamonds Pin',
+                'short_name'=>'mobile-legends-pin',
+                'description'=>'"<h4>About Mobile Lengends Diamonds</h4>\n<p>Mobile Legends diamonds allows users to unlock premium content and style your character. Equip your hero with useful items like skins, rewards, passes and more. You can also use Mobile Legends Diamonds to summon new heroes that will make you unstoppable and many more!</p>\n<h4>What is Mobile Legends: Bang Bang?</h4>\n<p>Mobile Legends: Bang Bang is an extremely popular MOBA mobile game. Its real-time 5 on 5 PVP battles are similar to League of Legends. You can fight over three lanes to take the enemy\'s tower. With 4 jungle areas, 18 defense towers, 2 Wild Bosses, complete reproductions of classic MOBA maps and full-on 5v5 and human vs. human battles, levelling up and gaining experience and gold to unlock heroes has never been more fun. There are 103 heroes and new ones are being added! Choose your favorite heroes and build the perfect team with your friends.</p>\n"',
+                'short_description'=>'Mobile Legends Diamonds Pin is the digital prepaid code for Mobile Legends gamers to top up in-game credit for Mobile Legends, also known as Diamonds.',
+                'guide'=>'"<h4>How to Redeem?</h4>\n<ol>\n<li>Launch the Mobile Legends game on your device.</li>\n<li>Go to your profile page by tapping your avatar icon in the top-left corner of the main screen.</li>\n<li>Look for the "Redemption Code" option, which is usually found under the "Settings" tab.</li><li>Enter the redeem code in the provided field. Make sure to type it exactly as it appears, including any uppercase letters and dashes.</li><li>Tap on the "Okay" button after entering the code.</li><li>Once redeem complete diamonds sent directly to your in-game mailbox. Check there if you don\'t receive them immediately</li></ol>"',
+                'others'=>null,
+                'tags'=>'Mobile Legends, Diamonds',
+                'sku'=>'GRH011',
+                'image'=>'mobile_legends_pin.png',
+                'status'=>1,
+                'label'=>'best'
+            ],
+
+            [
+                'name'=>'PlayStation Network Card (MY)',
+                'short_name'=>'playstation-network-card-my',
+                'description'=>'"<h4>About PlayStation Network Card (PSN)</h4>\n<p>Add funds to your PlayStation® Network wallet without the need for a credit card. Top up your PlayStation® Network wallet with Gaming Republic Hub to purchase thousands of exclusive games, add-on content, movies, music, and more through PlayStation®Store and Sony Entertainment Network Store, accessible with your PS5, PS4, PS3 or PSP, or PC.</p>\n<h4>PlayStation Plus Membership</h4>\n<p>Discover your next great adventure with brand-new catalogs of hundreds of current and classic games, limited-time trials, online multiplayer, member-exclusive discounts and more, with a choice of three new membership options.</p>\n"',
+                'short_description'=>'Purchase thousands of exclusive games, add-on content, movies, music, and more through PlayStation®Store and Sony Entertainment Network Store.',
+                'guide'=>'"<h4>PlayStation Network Card Redemption Guide:</h4>\n<ol>\n<li>Sign in to PlayStation Network on your PS5, PS4, PS3, PSP or PC.</li>\n<li>Head to PlayStation Store and select the Redeem Codes icon at the top of the page.</li>\n<li>Enter the PSN card code and the funds will be added to your wallet instantly.</li></ol>"',
+                'others'=>null,
+                'tags'=>'PlayStation, PS5, PS4, PS3, PSP',
+                'sku'=>'GRH012',
+                'image'=>'playstation_network_card.png',
+                'status'=>1,
+                'label'=>'best'
+            ],
+            [
+                'name'=>'Free Fire Max Diamonds Pins',
+                'short_name'=>'free-fire-max-diamonds',
+                'description'=>'"<h4>About Free Fire Max Diamonds</h4>\n<p>Free Fire Max Diamond allows you to purchase weapons, pets, skins and items in Store. Plus, you can participate in Luck Royale and Diamond Spin to obtain various unique character skins, weapon skins, weapon upgrades and even cosmetics.</p>\n<p>With over 100 secure payment options, buy and receive your code instantly. There is no need to go through the App Store or Google Play Store anymore. Simply redeem your code and buy all the characters, weapons and skins that you want!</p>\n<h4>What are Free Fire Max Diamonds Used for?</h4>\n<p>Based on the same principle as PUBG Mobile Unknown Cash or Apex Legends Coins, Free Fire Max Diamonds work the same way. Free Fire Max Diamonds is actually an in-game currency that is used to buy in-game items or cosmetics and to make sure your gameplay is accelerated.</p>\n<p>Iconic characters like Misha, Nikita, Kelly, Kapella and many others can be purchased with Free Fire Max Diamonds. You can also participate in Luck Royale and Diamond Spin to obtain other unique skins and upgrade weapons. Purchase some Free Fire Max Diamonds and buy some in-game shiny items to set yourself apart from other players!</p>\n"',
+                'short_description'=>'Quick and convenient, the Free Fire Max Diamonds code makes sure you can acquire the in-game currency.',
+                'guide'=>'"<h4>How to redeem Free Fire Diamonds?</h4>\n<ol>\n<li>Visit <a target=\"_blank\" href\"https://shop.garena.sg/\">Free Fire top up center</a> and enter your Free Fire Player id.</li>\n<li>Select Garena PPC, Enter the code and click \"confirm\".</li>\n<li>You will receive Free Fire Diamonds in your Free Fire account immediately after redemption.</li></ol>"',
+                'others'=>null,
+                'tags'=>'Free Fire Max, Garena',
+                'sku'=>'GRH013',
+                'image'=>'free_fire_max_diamonds.png',
+                'status'=>1,
+                'label'=>'best'
+            ],
             
+            [
+                'name'=>'Eudemons Point Card ',
+                'short_name'=>'eudemons-point',
+                'description'=>'"<h4>About Eudemons Point</h4>\n<p>Experience an fantasy story with faithful pets across Yartland in Eudemons, a western style online multiplayer RPG. Fight, explore, social & interact with friends, and raise pets to enjoy your own adventure.</p>\n<p>Thanks to the Eudemons Online Point Card, you\'re able to equip yourself with premium items like legendary mounts, enchanting costumes, and faithful pets that will accompany you on your thrilling escapades. You can also boost your gameplay and ascend the ranks at warp speed with experience boosts, turning your character into an unstoppable force within the realm of Eudemons Online.</p>\n"',
+                'short_description'=>'Eudemons Online Point Card is your ultimate key to unlocking a wealth of potential within the game.',
+                'guide'=>'"<h4>How to redeem?</h4>\n<ol>\n<li>Visit <a target=\"_blank\" href=\"https://shoppingmall.eudemons.com/EoPage/en/GameCard.aspx?channel=ndtqcard\">Eudemons Online Webshop</a> to top-up Eudemons Online.</li></ol>\n"',
+                'others'=>null,
+                'tags'=>'Eudemons',
+                'sku'=>'GRH014',
+                'image'=>'eudemons_point.png',
+                'status'=>1,
+                'label'=>'trend'
+            ],
 
+            [
+                'name'=>'Cherry Credits CC',
+                'short_name'=>'cherry-credits',
+                'description'=>'"<h4>About Cherry Credits CC</h4>\n<p>Launched in 2007, the CC currency is now used in over 1,000 games, including the very popular games such as Dragon Nest, bleach Mobile, Atlantic Online and Attack of the Earthlings.</p>\n<p>With Cherry Credits, buying and recharging in-game currency is so easy. All you have to do is to create your free account. Your credits are kept in your free e-wallet on the CC website. CC will enhance your gaming experience no matter what game you\'re playing.</p>\n"',
+                'short_description'=>'Global virtual credit system which you can use to make purchases online via Cherry Exchange or directly through merchants who support this payment method.',
+                'guide'=>'"<h4>How to top-up CC with Cherry Credits:</h4>\n<ol>\n<li>Visit <a target=\"_blank\" href=\"https://www.cherrycredits.com/TopUp\">Cherry Credits CC Top Up webshop</a>.</li>\n<li>Log in to your Cherry Credits Account.</li>\n<li>Next, choose "Cherry Credits Prepaid Card / ePIN" as your Top Up method.</li>\n<li>Enter the Serial Number and Security Code.</li>\n<li>Enter the Security Code and hit "Submit" to complete the process!</li>\n</ol>"',
+                'others'=>null,
+                'tags'=>'Cherry Credits, CC',
+                'sku'=>'GRH015',
+                'image'=>'cherry_credits.png',
+                'status'=>1,
+                'label'=>'trend'
+            ],
 
+            [
+                'name'=>'MyCard MY',
+                'short_name'=>'mycard-my',
+                'description'=>'"<h4>About MyCard</h4>\n<p>The safe and easy features of this payment platform allow buyers to purchase premium content of online games and services in a convenient, hassle-free environment.</p>\n<p>Launched by Smart Crown Technology Co,. Ltd, MyCard is one of the most widely used game point cards in Hong Kong, Macao and Taiwan. It serves as an international digital content point platform and provides both local and international digital content services.</p>\n<p>MyCard provides players with a safe shopping environment and their excellent customer service ensures that MyCard users experience the best of all that the MyCard platform has to offer.</p>\n"',
+                'short_description'=>'MyCard (MY / SEA) provides users the access to pay for 1,000+ digital content worldwide.',
+                'guide'=>'"<h4>How to top-up MyCard Points (MY/SEA):</h4>\n<ol>\n<li>Go to <a target=\"_blank\" href=\"https://www.mycard520.com/web/en-us/Redeem\">MyCard Payment Center</a>.</li>\n<li>Enter your MyCard serial number and password then click \"proceed\".</li>\n<li>Select your game or digital content.</li>\n<li>Enter your game\'s member ID and password and click \"confirm\".</li>\n</ol>"',
+                'others'=>null,
+                'tags'=>'MyCard MY, MyCard',
+                'sku'=>'GRH016',
+                'image'=>'mycard_my.png',
+                'status'=>1,
+                'label'=>'trend'
+            ]
         ];
         Product::insert($products);
     }

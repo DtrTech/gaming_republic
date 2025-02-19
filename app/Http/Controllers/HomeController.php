@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;
 use App\Models\Product;
+use App\Models\ProductVariant;
 use App\Models\ContactForm;
 use App\Exceptions\Failed;
 use Exception;
@@ -30,7 +31,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::where('status',1)->select('id','name','image','short_name')->get();
+        $products = Product::where('status', 1)
+        ->select('products.id', 'products.name', 'products.image', 'products.short_name', 'products.label')
+        ->addSelect(['lowest_price' => ProductVariant::selectRaw('MIN(price)')
+            ->whereColumn('product_variants.product_id', 'products.id')
+        ])
+        ->get();
+
         return view('index')->with('products',$products);
     }
 

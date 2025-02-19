@@ -80,3 +80,7 @@ Route::get('/order_history/{status}/{page}', [App\Http\Controllers\UserControlle
 Route::get('/about_us', function(){ return view('about_us'); })->name('about_us');
 Route::get('/contact_us', function(){ return view('contact_us'); })->name('contact_us');
 Route::post('/submit_contact', [App\Http\Controllers\HomeController::class, 'submit_contact'])->name('submit_contact');
+
+Route::post('/zohoverify/verifyforzoho.html', function () {
+    return redirect('/zohoverify/verifyforzoho.html');
+});
