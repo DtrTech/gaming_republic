@@ -20,7 +20,7 @@ class SendMail extends Mailable
     public function build()
     {
         return $this->subject('Your OTP Code')
-                    ->view('emails.otp')
+                    ->view('email.otp')
                     ->with(['otp' => $this->otp]);
     }
 }
