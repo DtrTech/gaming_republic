@@ -27,6 +27,6 @@ class ReceivedInquiryJob implements ShouldQueue
 
     public function handle()
     {
-        Mail::to($this->email)->send(new ReceivedInquiryMail($this->otp));
+        Mail::to($this->email)->send(new ReceivedInquiryMail($this->name, $this->content));
     }
 }
