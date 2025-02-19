@@ -10,7 +10,7 @@
         <h2>Thank You, {{ $name }}!</h2>
         <p>We have received your inquiry and will get back to you soon.</p>
         <p><strong>Your Message:</strong></p>
-        <blockquote style="font-style: italic; color: #555;">"{{ $messageContent }}"</blockquote>
+        <blockquote style="font-style: italic; color: #555;">"{{ $content }}"</blockquote>
         <p>We appreciate your patience.</p>
         <p style="font-size: 12px; color: #888;">If you have any urgent concerns, please contact us directly.</p>
     </div>
