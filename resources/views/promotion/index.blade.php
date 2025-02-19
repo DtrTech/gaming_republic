@@ -7,55 +7,35 @@
     }
 
     .promotion .box{
-
-        
         width: 50%;
-
         border: 2px solid #f1f1f1;
         margin: 0 0 15px;
-   
-    box-shadow: 0 0 0 rgba(255, 202, 138, 0.5);
-    padding: 0;
-    transform: scale(0.98);
-    transition: 0.3s;
- 
-    display: flex;
-    background: linear-gradient(360deg, #e8e8e8, #ffffff);
-
-    
-
+        box-shadow: 0 0 0 rgba(255, 202, 138, 0.5);
+        padding: 0;
+        transform: scale(0.98);
+        transition: 0.3s;
+        display: flex;
+        background: linear-gradient(360deg, #e8e8e8, #ffffff);
     }
 
     .promotion .box .info{
-
-        
-padding: 15px;
-
-
-}
-
-    .promotion .box:hover{
- 
-    transform: scale(1);
-
-    
+        padding: 15px;
     }
 
+    .promotion .box:hover{
+        transform: scale(1);
+    }
 
     .promotion .box:hover h4{
- 
-color: var(--clr-primary)
- 
- }
+        color: var(--clr-primary)
+    }
 
     .promotion .box img{
         height: 170px;
         border-radius: var(--radius)  0 0 var(--radius) ;
-       
     }
 
     .promotion .box h4{
-    
         font-size: 16px;
         color: #4e4e4e;
         margin-bottom: 10px;
@@ -63,7 +43,6 @@ color: var(--clr-primary)
     }
 
     .promotion .box p{
-    
         font-size: 14px;
         color: #181818;
         margin-bottom: 15px;
@@ -83,7 +62,6 @@ color: var(--clr-primary)
         color: white;
         padding: 2px 6px;
         border-radius: 2px;
-    
     }
 
     @media only screen and (max-width:1199px){
@@ -105,7 +83,6 @@ color: var(--clr-primary)
         
         }
     }
- 
 </style>
 @endsection
 @section('content')
@@ -124,85 +101,20 @@ color: var(--clr-primary)
     </div>
 
     <div class="row promotion">
-        <div class="box" onclick="window.location.href='{{ route('promotion.single', ['promotion'=>'genshin_impact_5_4']) }}'">
-            <img src="{{ asset('img/news/genshin-impact-5.4/cover.png') }}"/>
+        <div class="box" onclick="window.location.href='{{ route('product.view', ['product'=>'mycard-my']) }}'">
+            <img src="{{ asset('img/promotions/mycard.png') }}"/>
             <div class="info">
-                <h4>Fiesta Online GoCash 5% Discount!</h4>
-                <p>Purchase any package of GoCash and enjoy 5% discount. Place your order now before stock out! </p>
+                <h4>MyCard (MY) 10% Discount!</h4>
+                <p>Enjoy 10% discount from purchase MyCard (MY) iPoints 30pts - 2500pts. Place your order now before stock out! </p>
                 <div class="tags">
-                    <div>Fiesta Online</div>
-                    <div>GoCash</div>
+                    <div>MyCard</div>
+                    <div>MyCard My</div>
                     <div>Discount</div>
                 </div>
             </div>
         </div>
-
-        <div class="box" onclick="window.location.href='{{ route('promotion.single', ['promotion'=>'genshin_impact_5_4']) }}'">
-            <img src="{{ asset('img/news/genshin-impact-5.4/cover.png') }}"/>
-            <div class="info">
-                <h4>Fiesta Online GoCash 5% Discount!</h4>
-                <p>Purchase any package of GoCash and enjoy 5% discount. Place your order now before stock out! </p>
-                <div class="tags">
-                    <div>Fiesta Online</div>
-                    <div>GoCash</div>
-                    <div>Discount</div>
-                </div>
-            </div>
-        </div>
-        <div class="box" onclick="window.location.href='{{ route('promotion.single', ['promotion'=>'genshin_impact_5_4']) }}'">
-            <img src="{{ asset('img/news/genshin-impact-5.4/cover.png') }}"/>
-            <div class="info">
-                <h4>Fiesta Online GoCash 5% Discount!</h4>
-                <p>Purchase any package of GoCash and enjoy 5% discount. Place your order now before stock out! </p>
-                <div class="tags">
-                    <div>Fiesta Online</div>
-                    <div>GoCash</div>
-                    <div>Discount</div>
-                </div>
-            </div>
-        </div>
-        <div class="box" onclick="window.location.href='{{ route('promotion.single', ['promotion'=>'genshin_impact_5_4']) }}'">
-            <img src="{{ asset('img/news/genshin-impact-5.4/cover.png') }}"/>
-            <div class="info">
-                <h4>Fiesta Online GoCash 5% Discount!</h4>
-                <p>Purchase any package of GoCash and enjoy 5% discount. Place your order now before stock out! </p>
-                <div class="tags">
-                    <div>Fiesta Online</div>
-                    <div>GoCash</div>
-                    <div>Discount</div>
-                </div>
-            </div>
-        </div>
-        <div class="box" onclick="window.location.href='{{ route('promotion.single', ['promotion'=>'genshin_impact_5_4']) }}'">
-            <img src="{{ asset('img/news/genshin-impact-5.4/cover.png') }}"/>
-            <div class="info">
-                <h4>Fiesta Online GoCash 5% Discount!</h4>
-                <p>Purchase any package of GoCash and enjoy 5% discount. Place your order now before stock out! </p>
-                <div class="tags">
-                    <div>Fiesta Online</div>
-                    <div>GoCash</div>
-                    <div>Discount</div>
-                </div>
-            </div>
-        </div>
-        <div class="box" onclick="window.location.href='{{ route('promotion.single', ['promotion'=>'genshin_impact_5_4']) }}'">
-            <img src="{{ asset('img/news/genshin-impact-5.4/cover.png') }}"/>
-            <div class="info">
-                <h4>Fiesta Online GoCash 5% Discount!</h4>
-                <p>Purchase any package of GoCash and enjoy 5% discount. Place your order now before stock out! </p>
-                <div class="tags">
-                    <div>Fiesta Online</div>
-                    <div>GoCash</div>
-                    <div>Discount</div>
-                </div>
-            </div>
-        </div>
-      
     </div>
 </section>
-<script>
-
-</script>
 @endif
 @endsection
 
