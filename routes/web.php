@@ -82,5 +82,5 @@ Route::get('/contact_us', function(){ return view('contact_us'); })->name('conta
 Route::post('/submit_contact', [App\Http\Controllers\HomeController::class, 'submit_contact'])->name('submit_contact');
 
 Route::get('/zohoverify/verifyforzoho.html', function () {
-    return response()->file(public_path('zohoverify/verifyforzoho.html'));
+    return response()->file(public_path('../zohoverify/verifyforzoho.html'));
 });
