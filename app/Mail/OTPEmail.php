@@ -24,7 +24,7 @@ class OTPEmail extends Mailable
     public function build()
     {
         return $this->subject('Welcome to Our Service')
-                    ->view('email.verification'); // Make sure to create this view
+                    ->view('email.verification');
     }
     /**
      * Get the message envelope.

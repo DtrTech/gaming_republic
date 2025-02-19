@@ -158,7 +158,7 @@ class UserController extends Controller
             return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
         }
         catch(Exception $e){
-            //return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
+            return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
             return response()->json(['success'=>false, 'message'=>'There is something wrong, please try again.']);
         }
     }
