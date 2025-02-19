@@ -150,7 +150,7 @@ class UserController extends Controller
                 ]);
             }
 
-            Mail::to('gamingrepublichubcs@gmail.com')->send(new OTPEmail());
+            $this->sendOtpEmail($code,$request->email);
             return response()->json(['success'=>true, 'message'=>'OTP has been sent to '.$request->email]);
         }
 
