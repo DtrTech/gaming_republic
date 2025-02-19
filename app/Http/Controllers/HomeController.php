@@ -68,7 +68,7 @@ class HomeController extends Controller
             ]);
 
             // do other
-
+            $this->sendConfirmReceivedEmail($request->input('name'), $request->input('email'), $request->input('message'));
             return response()->json(['success'=>true,'message'=>'Thank you for reaching out! We have received your message and will get back to you shortly.']);
 
 

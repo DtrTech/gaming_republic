@@ -7,6 +7,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use App\Mail\ContactReceived;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -24,18 +25,13 @@ class Controller extends BaseController
     }
 
 
-    public function testEmail()
-    {
-        Mail::raw('This is a test email from Laravel using Zoho SMTP.', function ($message) {
-            $message->to('qweqweqweq803@gmail.com')
-                    ->subject('Test Email from Laravel');
-        });
-
-        return 'Email sent successfully!';
-    }
-
     public function sendOtpEmail($otp,$email)
     {
         Mail::to($email)->send(new SendMail($otp));
+    }
+
+    public function sendConfirmReceivedEmail($name,$content,$email)
+    {
+        Mail::to($email)->send(new ContactReceived($name, $content));
     }
 }
