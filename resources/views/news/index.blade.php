@@ -97,15 +97,6 @@
                 <h4>Fnatic ONIC Emerges As M6’s Reigning Champions</h4>
             </div>
         </div>
-
-
-        <div class="box" onclick="window.location.href='{{ route('news.single', ['news'=>'genshin_impact_5_4']) }}'">
-            <img src="{{ asset('img/news/genshin-impact-5.4/cover.png') }}"/>
-            <div>
-                <h4>Genshin Impact "Moonlight Amidst Dreams" Update Highlights</h4>
-            </div>
-        </div>
-      
     </div>
 </section>
 @endif
