@@ -156,35 +156,24 @@
                 }
                 else{
                     products.forEach(function(product){
-                        console.log(product);
-                         // Generate correct product URL dynamically
-                let productUrl = `{{ route('product.view', ['product' => '__PRODUCT_SHORT_NAME__']) }}`.replace('__PRODUCT_SHORT_NAME__', product.short_name);
+                        let productUrl = `{{ route('product.view', ['product' => '__PRODUCT_SHORT_NAME__']) }}`.replace('__PRODUCT_SHORT_NAME__', product.short_name);
+                        let element = $(`
+                            <div class="result">
+                                <a href="${productUrl}" class="product-item">
+                                    <img src="{{ asset('img/products/') }}/${product.image}" alt="${product.name}"/>${product.name}
+                                </a>
+                            </div>
+                        `);
 
-// Create the product element
-let element = $(`
-                        <div class="result">
-    <a href="${productUrl}" class="product-item">
-       
-            <img src="{{ asset('img/products/') }}/${product.image}" alt="${product.name}" />
-            ${product.name}
-    </a>
-    </div>
-`);
-
-// Append the new element to the results container
-$('#search-results').append(element);
+                $('#search-results').append(element);
                     });
 
                     $('#search-results').removeClass('hide')
                 }
-                // const resultsDiv = document.getElementById("results");
-                // resultsDiv.innerHTML = products.map(product => 
-                //     `<div class="result-item">${product.name}</div>`).join("");
             }
 
             $(document).ready(function(){
                 let debounceTimer;
-
                 $('#search').on('focus',function(){
                     $(this).closest('.search-wrapper').addClass('active');
                     
@@ -210,15 +199,21 @@ $('#search-results').append(element);
                   //  $(this).val('');
                 });
                 
-                $('#btn-request-otp').on('click', function(event){
+                $('#btn-request-otp').on('click', function(event) {
                     event.preventDefault();
-                    
-                    const form = $('#form-register');
-                    if (form[0].checkValidity()) {
-                        showLoading();
 
+                    const button = $(this);
+                    const form = $('#form-register');
+
+                    if (form[0].checkValidity()) {
+                        // Disable button and show spinner immediately
+                        button.prop('disabled', true);
+                        button.html('<svg id="spinning-loading" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> <path d="M12 3a9 9 0 1 0 9 9"></path> </svg>');
+
+                        // Prepare form data for AJAX
                         const formData = new FormData(form[0]);
 
+                        // Send AJAX request
                         $.ajax({
                             url: "{{ route('user.request_otp') }}",
                             method: 'POST',
@@ -227,18 +222,43 @@ $('#search-results').append(element);
                             contentType: false,
                             headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
                             success: function(response) {
-                                console.log(response);
-                                if(response.success == true) {
+                                if (response.success) {
+                                    // Start countdown only after success
+                                    let seconds = 60;
+                                    const originalText = button.text();
+
+                                    // Set initial button HTML with countdown
+                                    button.html(`
+                                        <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+                                        Please wait <span id="otp-countdown">60</span>s
+                                    `);
+
+                                    // Update countdown every second
+                                    const interval = setInterval(() => {
+                                        seconds--;
+                                        $('#otp-countdown').text(seconds);
+
+                                        if (seconds <= 0) {
+                                            clearInterval(interval);
+                                            button.prop('disabled', false);
+                                            button.text(originalText); // Restore original button text
+                                        }
+                                    }, 1000);
+
+                                    // Show success message
                                     setDefaultSwal('success', '', response.message);
                                 } else {
+                                    // If the request was unsuccessful, restore the button
+                                    button.prop('disabled', false);
+                                    button.html('Request OTP'); // Restore original button text
                                     setDefaultSwal('error', '', response.message);
                                 }
                             },
                             error: function() {
-                                setDefaultSwal('error', '' ,'There is something wrong, please try again.');
-                            },
-                            complete: function(){
-                                hideLoading();
+                                // If there is an error, restore the button and show error message
+                                button.prop('disabled', false);
+                                button.html('Request OTP'); // Restore original button text
+                                setDefaultSwal('error', '', 'There is something wrong, please try again.');
                             }
                         });
                     } else {
