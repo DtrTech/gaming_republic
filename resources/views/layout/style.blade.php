@@ -29,6 +29,36 @@
 
     .btn-disabled{
         background: grey !important;
-        text-transform: lowercase;
+        text-transform: lowercase !important;
+    }
+
+    #contact-info{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    #contact-info div{
+        background: white;
+        padding: 5px;
+        border-radius: 5px;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    #contact-info div span{
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--clr-primary);
+        text-transform: uppercase;
+    
     }
 </style>

@@ -77,42 +77,45 @@
 <!-- ABOUT US -->
 <section>
     <div class="row contact">
-        <div class="col"><img src="{{ asset('img/contact.png') }}"/></div>
+        <div class="col">
+            <img src="{{ asset('img/contact.png') }}"/>
+            <div id="contact-info">
+                <div><span>Email:</span>gamingrepublichub@outlook.com</div>
+                <div><span>Contact:</span>+60 1172621598</div>
+            </div>
+        </div>
         <div class="col form-wrapper">
-        <form id="form-contact" enctype="multipart/form-data">
-            <h2>Contact Us</h2>
-                        <div class="input-field">
-                            <label>Name:</label>
-                            <input type="text" name="name" placeholder="Your name" autocomplete="off" required>
-                        </div>
+            <form id="form-contact" enctype="multipart/form-data">
+                <h2>Contact Us</h2>
+                <div class="input-field">
+                    <label>Name:</label>
+                    <input type="text" name="name" placeholder="Your name" autocomplete="off" required>
+                </div>
 
-                        <div class="input-field">
-                            <label>Email:</label>
-                            <input type="email" name="email" placeholder="e.g: example@mail.com" autocomplete="off" required>
-                        </div>
+                <div class="input-field">
+                    <label>Email:</label>
+                    <input type="email" name="email" placeholder="e.g: example@mail.com" autocomplete="off" required>
+                </div>
 
-                        <div class="input-field">
-                            <label>Contact No (Optional):</label>
-                            <input type="text" name="contact" placeholder="0168883333" autocomplete="off">
-                        </div>
+                <div class="input-field">
+                    <label>Contact No (Optional):</label>
+                    <input type="text" name="contact" placeholder="0168883333" autocomplete="off">
+                </div>
 
-                        <div class="input-field">
-                            <label>Message:</label>
-                            <textarea name="message" rows='3'></textarea>
-                        </div>
-                        
-                      
-                        <button type="submit" class="btn btn-submit" onclick="showLoading()">Submit</button>
+                <div class="input-field">
+                    <label>Message:</label>
+                    <textarea name="message" rows='3'></textarea>
+                </div>
                 
-                    </form>
-    
+                
+                <button type="submit" class="btn btn-submit" onclick="showLoading()">Submit</button>
+        
+            </form>
         </div>
     </div>
-
 </section>
 <script>
     $(document).ready(function(){
-        console.log('eqweq');
         $('#form-contact').on('submit', function(event){
             event.preventDefault();
             showLoading();
