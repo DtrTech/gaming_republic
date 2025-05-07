@@ -26,4 +26,8 @@
             transform: rotate(360deg);
         }
     }
+
+    .btn-disabled{
+        background: grey !important;
+    }
 </style>

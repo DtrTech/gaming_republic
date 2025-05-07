@@ -209,7 +209,7 @@
                         // Disable button and show spinner immediately
                         button.prop('disabled', true);
                         button.html('<svg id="spinning-loading" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> <path d="M12 3a9 9 0 1 0 9 9"></path> </svg>');
-
+                        button.addClass('btn-disabled');
                         // Prepare form data for AJAX
                         const formData = new FormData(form[0]);
 
@@ -225,15 +225,8 @@
                                 if (response.success) {
                                     // Start countdown only after success
                                     let seconds = 60;
-                                    const originalText = button.text();
-
-                                    // Set initial button HTML with countdown
-                                    button.html(`
-                                        <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
-                                        Please wait <span id="otp-countdown">60</span>s
-                                    `);
-
-                                    // Update countdown every second
+                                   
+                                    button.html(`Please wait <span id="otp-countdown">60</span>s`);
                                     const interval = setInterval(() => {
                                         seconds--;
                                         $('#otp-countdown').text(seconds);
@@ -241,7 +234,8 @@
                                         if (seconds <= 0) {
                                             clearInterval(interval);
                                             button.prop('disabled', false);
-                                            button.text(originalText); // Restore original button text
+                                            button.text('Get OTP');
+                                            button.removeClass('btn-disabled');
                                         }
                                     }, 1000);
 
