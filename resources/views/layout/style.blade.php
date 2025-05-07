@@ -29,5 +29,6 @@
 
     .btn-disabled{
         background: grey !important;
+        text-transform: lowercase;
     }
 </style>

@@ -226,7 +226,7 @@
                                     // Start countdown only after success
                                     let seconds = 60;
                                    
-                                    button.html(`<span id="otp-countdown" style="text-transform:lowercase">60</span>s`);
+                                    button.html(`<span id="otp-countdown">60</span>s`);
                                     const interval = setInterval(() => {
                                         seconds--;
                                         $('#otp-countdown').text(seconds);
