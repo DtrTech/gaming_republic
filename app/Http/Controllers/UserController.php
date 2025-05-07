@@ -150,7 +150,7 @@ class UserController extends Controller
                 ]);
             }
 
-            dispatch(new SendOtpJob($code,$request->email))->onQueue('emails');
+            (new SendOtpJob($code, $request->email))->handle();
             return response()->json(['success'=>true, 'message'=>'OTP has been sent to '.$request->email]);
         }
 
