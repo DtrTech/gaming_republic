@@ -26,8 +26,8 @@
                     <form id="form-login" enctype="multipart/form-data">
                         @csrf
                         <div class="input-field">
-                            <label>Username / Email:</label>
-                            <input type="text" name="username" placeholder="e.g: example@mail.com" autocomplete="off" required>
+                            <label>Username / Contact No:</label>
+                            <input type="text" name="username" placeholder="e.g: 0123456789" autocomplete="off" required>
                         </div>
 
                         <div class="input-field">
@@ -61,8 +61,8 @@
                         </div>
 
                         <div class="input-field">
-                            <label>Email:</label>
-                            <input type="text" name="email" placeholder="e.g: example@mail.com" autocomplete="off" required>
+                            <label>Contact No:</label>
+                            <input type="text" name="contact_no" placeholder="e.g: 0123456789" autocomplete="off" required>
                         </div>
 
                         <div class="input-field">
@@ -276,6 +276,9 @@
                         success: function(response) {
                             if(response.success == true){
                                 setDefaultSwal('success','','Login successful.');
+                                setTimeout(function () {
+                                    location.reload();
+                                }, 2000);
                             }
                             else{
                                 setDefaultSwal('error','',response.message);
@@ -306,7 +309,10 @@
                         headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}'},
                         success: function(response) {
                             if(response.success == true){
-                                window.location.reload();
+                                setDefaultSwal('success','','Login successful.');
+                                setTimeout(function () {
+                                    location.reload();
+                                }, 2000);
                             }
                             else{
                                 setDefaultSwal('error','',response.message);

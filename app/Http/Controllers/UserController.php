@@ -16,6 +16,7 @@ use App\Models\ProductVariant;
 use App\Models\UserCart;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\UserOtp;
 use App\Jobs\SendOtpJob;
 use App\Exceptions\Failed;
 use Exception;
@@ -23,152 +24,164 @@ use Carbon\Carbon;
 
 class UserController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-       // $this->middleware('auth');
+    private $user   = 'gl9av4VdG1';
+    private $pass   = 'aIoyRLcJ2CHMUiYTUoyxbNsupNm7yM4et0KD9aQI';
+    private $from   = '68068';
+    private $url    = 'https://sms.360.my/gw/bulk360/v3_0/send.php';
+
+    public function __construct(){
+        $this->user = urlencode($this->user);
+        $this->pass = urlencode($this->pass);
+        $this->url = $this->url . "?user=$this->user&pass=$this->pass&from=$this->from";
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function register(Request $request)
     {
-        try{
-            $validator = Validator::make($request->all(), [
-                'username' => ['required', 'string', 'unique:users,username,NULL,id,deleted_at,NULL', 'min:4', 'max:18', 'regex:/^[a-zA-Z0-9]+$/'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
-                'email' => ['required', 'string', 'email', 'unique:users,email,NULL,id,deleted_at,NULL']
-            ], [
-                'username.required' => 'The username is required.',
-                'username.string' => 'The username must be a string.',
-                'username.unique' => 'This username is already taken.',
-                'username.min' => 'The username must be at least 4 characters.',
-                'username.max' => 'The username may not be greater than 18 characters.',
-                'username.regex' => 'The username may only contain letters and numbers.',
-                
-                'password.required' => 'The password is required.',
-                'password.string' => 'The password must be a string.',
-                'password.min' => 'The password must be at least 8 characters.',
-                'password.confirmed' => 'The password confirmation does not match.',
-                
-                'email.required' => 'The email is required.',
-                'email.string' => 'The email must be a string.',
-                'email.email' => 'The email must be a valid email address.',
-                'email.unique' => 'This email is already registered.',
-                'email.min' => 'The email must be at least 4 characters.',
-                'email.max' => 'The email may not be greater than 18 characters.'
-            ]);
-
-            if ($validator->fails()) {
-                throw new Failed($validator->errors()->first()); 
-            }
-
-            $verification = UserVerification::where('email',$request->email)->first();
-            if($verification->verified == 1){
-                throw new Failed($request->email.' has been taken by others.');
-            }
-
-            if($verification->code != $request->otp){
-                throw new Failed('Invalid OTP');
-            }
-
-            $request->merge(['email_verified_at'=>Carbon::now()]);
+        $validator = Validator::make($request->all(), [
+            'username' => ['required', 'string', 'unique:users,username,NULL,id,deleted_at,NULL', 'min:4', 'max:18', 'regex:/^[a-zA-Z0-9]+$/'],
+            'password' => ['required', 'string', 'min:8', 'confirmed']
+        ], [
+            'username.required' => 'The username is required.',
+            'username.string' => 'The username must be a string.',
+            'username.unique' => 'This username is already taken.',
+            'username.min' => 'The username must be at least 4 characters.',
+            'username.max' => 'The username may not be greater than 18 characters.',
+            'username.regex' => 'The username may only contain letters and numbers.',
             
-            $user = User::create($request->all());
+            'password.required' => 'The password is required.',
+            'password.string' => 'The password must be a string.',
+            'password.min' => 'The password must be at least 8 characters.',
+            'password.confirmed' => 'The password confirmation does not match.',
+        ]);
 
-            $verification->update(['verified'=>1]);
-
-            Auth::login($user);
-
-            return response()->json(['success'=>true, 'message'=>'Account created!', 'data'=>json_encode($request->all())]);
+        if ($validator->fails()) {
+            throw new Failed($validator->errors()->first()); 
         }
 
-        catch(Failed $e){
-            return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
+        $contact_no= $request->contact_no;
+        if (substr($contact_no, 0, 1) === '6') {
+            $contact_no = substr($contact_no, 1);
+        } elseif (substr($contact_no, 0, 1) === '1') {
+            $contact_no = '0' . $contact_no;
+        }elseif (substr($contact_no, 0, 1) === '0') {
+            // Already valid, do nothing
+        } else {
+            return [
+                'message' => 'Invalid contact number format.',
+                'success' => false,
+            ];
         }
-        catch(Exception $e){
-            //return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
-            return response()->json(['success'=>false, 'message'=>'There is something wrong, please try again.']);
+        $request->merge(['contact_no'=>$contact_no]);
+
+        $verification = UserOtp::where('contact_no',$request->contact_no)->first();
+        if($verification->verified == 1){
+            throw new Failed($request->contact_no.' has been taken by others.');
         }
+
+        if($verification->code != $request->otp){
+            throw new Failed('Invalid OTP');
+        }
+        $request->merge(['password'=>Hash::make($request->password),'email'=>$request->contact_no.'@gmail.com']);
+        
+        $user = User::create($request->all());
+
+        $verification->update(['verified'=>1,'verified_at'=>Carbon::now()]);
+
+        Auth::login($user);
+
+        return response()->json(['success'=>true, 'message'=>'Account created!', 'data'=>json_encode($request->all())]);
     }
 
 
     public function request_otp(Request $request)
     {
-        try{
-            $validator = Validator::make($request->all(), [
-                'username' => ['required', 'string', 'unique:users,username,NULL,id,deleted_at,NULL', 'min:4', 'max:18', 'regex:/^[a-zA-Z0-9]+$/'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
-                'email' => ['required', 'string', 'email', 'unique:users,email,NULL,id,deleted_at,NULL']
-            ], [
-                'username.required' => 'The username is required.',
-                'username.string' => 'The username must be a string.',
-                'username.unique' => 'This username is already taken.',
-                'username.min' => 'The username must be at least 4 characters.',
-                'username.max' => 'The username may not be greater than 18 characters.',
-                'username.regex' => 'The username may only contain letters and numbers.',
-                
-                'password.required' => 'The password is required.',
-                'password.string' => 'The password must be a string.',
-                'password.min' => 'The password must be at least 8 characters.',
-                'password.confirmed' => 'The password confirmation does not match.',
-                
-                'email.required' => 'The email is required.',
-                'email.string' => 'The email must be a string.',
-                'email.email' => 'The email must be a valid email address.',
-                'email.unique' => 'This email is already registered.',
-                'email.min' => 'The email must be at least 4 characters.',
-                'email.max' => 'The email may not be greater than 18 characters.'
-            ]);
+        $validator = Validator::make($request->all(), [
+            'username' => ['required', 'string', 'unique:users,username,NULL,id,deleted_at,NULL', 'min:4', 'max:18', 'regex:/^[a-zA-Z0-9]+$/'],
+            'password' => ['required', 'string', 'min:8', 'confirmed']
+        ], [
+            'username.required' => 'The username is required.',
+            'username.string' => 'The username must be a string.',
+            'username.unique' => 'This username is already taken.',
+            'username.min' => 'The username must be at least 4 characters.',
+            'username.max' => 'The username may not be greater than 18 characters.',
+            'username.regex' => 'The username may only contain letters and numbers.',
+            
+            'password.required' => 'The password is required.',
+            'password.string' => 'The password must be a string.',
+            'password.min' => 'The password must be at least 8 characters.',
+            'password.confirmed' => 'The password confirmation does not match.',
+        ]);
 
-            if ($validator->fails()) {
-                throw new Failed($validator->errors()->first()); 
-            }
-
-            $code = $this->createOTP();
-            $exist = UserVerification::where('email',$request->email)->first();
-
-            if(isset($exist)){
-                if($exist->verified == 1){
-                    throw new Failed($request->email." has been used by others.");
-                }
-                else{
-                    $exist->update(['code'=>$code]);
-                }
-            }
-            else{
-                UserVerification::create([
-                    'email'=>$request->email,
-                    'code'=>$code
-                ]);
-            }
-
-            (new SendOtpJob($code, $request->email))->handle();
-            return response()->json(['success'=>true, 'message'=>'OTP has been sent to '.$request->email]);
+        if ($validator->fails()) {
+            throw new Failed($validator->errors()->first()); 
         }
 
-        catch(Failed $e){
-            return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
+        $contact_no= $request->contact_no;
+        if (substr($contact_no, 0, 1) === '6') {
+            $contact_no = substr($contact_no, 1);
+        } elseif (substr($contact_no, 0, 1) === '1') {
+            $contact_no = '0' . $contact_no;
+        }elseif (substr($contact_no, 0, 1) === '0') {
+            // Already valid, do nothing
+        } else {
+            return [
+                'message' => 'Invalid contact number format.',
+                'success' => false,
+            ];
         }
-        catch(Exception $e){
-           // return response()->json(['success'=>false, 'message'=>$e->getMessage()]);
-            return response()->json(['success'=>false, 'message'=>'There is something wrong, please try again.']);
+        $request->merge(['contact_no'=>$contact_no]);
+        
+        $verification = UserOtp::where('contact_no',$request->contact_no)->first();
+        if(isset($verification) && $verification->verified == 1){
+            return [
+                'message' => $request->contact_no.' has been taken by others.',
+                'success' => false,
+            ];
         }
+
+        $contact = '6'.$request->contact_no; 
+        $smscode = $this->randomNum(); 
+        $message = "RM0 GRH, Your verification code is ".$smscode;
+
+        $this->url = $this->url . "&to=".$contact."&text=".rawurlencode($message);
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        $sentResult = curl_exec($ch);
+        curl_close($ch);
+
+        if ($sentResult === FALSE) {
+            return [
+                'msg' => 'SMS ERROR',
+                'success' => false,
+            ];
+        } 
+        UserOtp::updateOrCreate(
+            [
+                'contact_no' => $request->contact_no, 
+            ],
+            [
+                'code' => $smscode,
+            ]
+        );
+        // dd($request->all());
+        return response()->json(['success'=>true, 'message'=>'OTP has been sent to '.$request->contact_no]);
+    }
+
+    private function randomNum() {
+        return rand(100000, 999999);
     }
 
     public function login(Request $request)
     {
         try{
-            $user = User::where('username',$request->username)->orWhere('email',$request->username)->first();
+            $user = User::where('username',$request->username)->orWhere('contact_no',$request->username)->first();
+            // dd($user);
             if(!isset($user) || !Hash::check($request->password, $user->password)){
-                throw new Failed('Invalid username/email or password.');
+                throw new Failed('Invalid username/contact_no or password.');
             }
             Auth::login($user);
             return response()->json(['success'=>true, 'message'=>'Login Successful']);
