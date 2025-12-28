@@ -40,10 +40,15 @@ class ApiController extends Controller
         if($findMerchant->wallet < 2){
             return response()->json(['status' => 'error', 'message' => 'Insufficient Wallet'], 400);
         }
-        
+
         $contact = '6'.$request->contact_no; 
         $smscode = $request->code; 
         $message = "RM0 GRH, Your verification code is ".$smscode;
+
+        $checkSMS = SmsTransaction::where('contact_no', $contact)->where('created_at', '>=', Carbon::now()->subSeconds(30))->first();
+        if($checkSMS){
+            return response()->json(['status' => 'error', 'message' => 'Please wait 30 seconds before requesting another OTP'], 400);
+        }
         
         if($findMerchant->type == "sms360myr"){
             $this->url = $this->url . "&to=".$contact."&text=".rawurlencode($message);
