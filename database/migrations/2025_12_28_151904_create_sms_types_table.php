@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sms_types', function (Blueprint $table) {
             $table->id();
-            $table->integer('type');
+            $table->string('type');
             $table->double('price')->nullable();
             $table->double('cost')->nullable();
             $table->double('earning')->nullable();

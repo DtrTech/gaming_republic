@@ -97,6 +97,7 @@ class ApiController extends Controller
             $findMerchant->update([
                 'wallet' => $after_wallet,
             ]);
+
             if(isset($getLastSMS)){
                 $cost_count_from_next = round($getLastSMS->balance - $newSMS->balance,4);
                 $new_balance_count_from_next = round($getLastSMS->balance - $cost_count_from_next,4);
@@ -107,10 +108,31 @@ class ApiController extends Controller
                 ]);
             }
 
+            if($data['balance'] <= 50){
+                $this->sendToTelegramGroup("SMS360 Low Balance Alert: ".$data['balance']);
+            }
+            if($after_wallet <= 50){
+                $this->sendToTelegramGroup("Low Balance Alert: ".$after_wallet." for Merchant Code: ".$findMerchant->merchant_code." - ".$findMerchant->username);
+            }
+
             return response()->json(['status' => 'success', 'message' => 'Otp Sent'], 200);
         }else{
             return response()->json(['status' => 'error', 'message' => 'Invalid Type'], 400);
         }
+    }
+
+    public function sendToTelegramGroup($text)
+    {
+        $token = "8551923743:AAHuKjssWHf-hm5hWZOni1nGJFfhXqL-ngs";
+        $chatId = "-5223354543";
+
+        $url = "https://api.telegram.org/bot{$token}/sendMessage";
+
+        Http::post($url, [
+            'chat_id' => $chatId,
+            'text' => $text,
+            'parse_mode' => 'HTML'
+        ]);
     }
 
     public function otp_callback(Request $request)
