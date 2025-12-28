@@ -37,6 +37,10 @@ class ApiController extends Controller
             return response()->json(['status' => 'error', 'message' => 'Invalid Signature'], 400);
         }
 
+        if($findMerchant->wallet < 2){
+            return response()->json(['status' => 'error', 'message' => 'Insufficient Wallet'], 400);
+        }
+        
         $contact = '6'.$request->contact_no; 
         $smscode = $request->code; 
         $message = "RM0 GRH, Your verification code is ".$smscode;
@@ -90,7 +94,7 @@ class ApiController extends Controller
                 ]);
             }
 
-            return response()->json(['status' => 'success', 'message' => 'Connected', 'data' => $request->all(),'otp_reply' => $sentResult], 200);
+            return response()->json(['status' => 'success', 'message' => 'Otp Sent'], 200);
         }else{
             return response()->json(['status' => 'error', 'message' => 'Invalid Type'], 400);
         }
