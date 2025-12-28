@@ -70,11 +70,16 @@ class ApiController extends Controller
                 'contact_no'=> $contact,
                 'code'      => $smscode,
                 'amount'    => $amount,
+                'before_wallet'=>$before_wallet,
+                'after_wallet'=>$after_wallet,
                 'desc'      => $data['desc'] ?? null,
                 'to'        => $data['to'] ?? null,
                 'ref'       => $data['ref'] ?? null,
                 'currency'  => $data['currency'] ?? null,
                 'balance'   => $data['balance']?? null,
+            ]);
+            $findMerchant->update([
+                'wallet' => $after_wallet,
             ]);
             if(isset($getLastSMS)){
                 $cost_count_from_next = round($newSMS->balance - $getLastSMS->balance,4);
