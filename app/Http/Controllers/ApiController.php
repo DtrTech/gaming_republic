@@ -71,6 +71,9 @@ class ApiController extends Controller
             $data = json_decode($sentResult, true);
             $before_wallet = $findMerchant->wallet;
             $amount = 0.12; //sms360myr otp cost
+            $predict_cost = 0.12;
+            $predict_earn = round($amount - $predict_cost,4);
+
             $after_wallet = round($before_wallet - $amount, 4);
             $getLastSMS = SmsTransaction::orderBy('id', 'DESC')->whereNull('new_balance_count_from_next')->first();
             
@@ -86,6 +89,8 @@ class ApiController extends Controller
                 'ref'       => $data['ref'] ?? null,
                 'currency'  => $data['currency'] ?? null,
                 'balance'   => $data['balance']?? null,
+                'predict_cost' => $predict_cost,
+                'predict_earn' => $predict_earn,
             ]);
             $findMerchant->update([
                 'wallet' => $after_wallet,
