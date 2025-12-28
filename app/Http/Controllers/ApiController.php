@@ -47,9 +47,15 @@ class ApiController extends Controller
         $smscode = $request->code; 
         $message = "RM0 GRH, Your verification code is ".$smscode;
 
-        $checkSMS = SmsTransaction::where('contact_no', $contact)->where('created_at', '>=', Carbon::now()->subSeconds(30))->first();
-        if($checkSMS){
-            return response()->json(['status' => 'error', 'message' => 'Please wait 30 seconds before requesting another OTP'], 400);
+        if (
+            SmsTransaction::where('contact_no', $contact)
+                ->where('created_at', '>=', now()->subSeconds(30))
+                ->exists()
+        ) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Please wait 30 seconds before requesting another OTP'
+            ], 429);
         }
         
         if($findMerchant->type == "sms360myr"){
@@ -109,17 +115,17 @@ class ApiController extends Controller
                 ]);
             }
 
-            if ($data['balance'] <= 50) {
-                SendTelegramAlertJob::dispatch(
-                    "SMS360 Low Balance Alert: {$data['balance']}"
-                );
-            }
+            // if ($data['balance'] <= 50) {
+            //     SendTelegramAlertJob::dispatch(
+            //         "SMS360 Low Balance Alert: {$data['balance']}"
+            //     );
+            // }
 
-            if ($after_wallet <= 50) {
-                SendTelegramAlertJob::dispatch(
-                    "Low Balance Alert: User: {$findMerchant->username} - Wallet: RM{$after_wallet}"
-                );
-            }
+            // if ($after_wallet <= 50) {
+            //     SendTelegramAlertJob::dispatch(
+            //         "Low Balance Alert: User: {$findMerchant->username} - Wallet: RM{$after_wallet}"
+            //     );
+            // }
 
 
             return response()->json(['status' => 'success', 'message' => 'Otp Sent'], 200);
