@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\SmsTransaction;
+use App\Models\SmsType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -69,9 +70,10 @@ class ApiController extends Controller
             } 
 
             $data = json_decode($sentResult, true);
+            $smsType = SmsType::where('type', 'sms360myr')->first();
             $before_wallet = $findMerchant->wallet;
-            $amount = 0.12; //sms360myr otp cost
-            $predict_cost = 0.12;
+            $amount = $smsType->price ??0.12;
+            $predict_cost = $smsType->cost ?? 0.12;
             $predict_earn = round($amount - $predict_cost,4);
 
             $after_wallet = round($before_wallet - $amount, 4);
