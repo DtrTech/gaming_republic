@@ -82,7 +82,7 @@ class ApiController extends Controller
                 'wallet' => $after_wallet,
             ]);
             if(isset($getLastSMS)){
-                $cost_count_from_next = round($newSMS->balance - $getLastSMS->balance,4);
+                $cost_count_from_next = round($getLastSMS->balance - $newSMS->balance,4);
                 $new_balance_count_from_next = round($getLastSMS->balance - $cost_count_from_next,4);
                 $getLastSMS->update([
                     'cost_count_from_next' => $cost_count_from_next,
