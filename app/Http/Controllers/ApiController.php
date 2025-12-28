@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\SmsTransaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -39,18 +40,55 @@ class ApiController extends Controller
         $contact = '6'.$request->contact_no; 
         $smscode = $request->code; 
         $message = "RM0 GRH, Your verification code is ".$smscode;
+        
+        if($findMerchant->type == "sms360myr"){
+            $this->url = $this->url . "&to=".$contact."&text=".rawurlencode($message);
 
-        $this->url = $this->url . "&to=".$contact."&text=".rawurlencode($message);
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $this->url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+            $sentResult = curl_exec($ch);
+            curl_close($ch);
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        $sentResult = curl_exec($ch);
-        curl_close($ch);
+            if ($sentResult === FALSE) {
+                return [
+                    'status'  => 'error',
+                    'message' => 'OTP ERROR',
+                ];
+            } 
 
-        return response()->json(['status' => 'success', 'message' => 'Connected', 'data' => $request->all(),'otp_reply' => $sentResult], 200);
+            $data = json_decode($sentResult, true);
+            $before_wallet = $findMerchant->wallet;
+            $amount = 0.12; //sms360myr otp cost
+            $after_wallet = round($before_wallet - $amount, 4);
+            $getLastSMS = SmsTransaction::orderBy('id', 'DESC')->whereNull('new_balance_count_from_next')->first();
+            
+            $newSMS = SmsTransaction::create([
+                'user_id'   => $findMerchant->id,
+                'contact_no'=> $contact,
+                'code'      => $smscode,
+                'amount'    => $amount,
+                'desc'      => $data['desc'] ?? null,
+                'to'        => $data['to'] ?? null,
+                'ref'       => $data['ref'] ?? null,
+                'currency'  => $data['currency'] ?? null,
+                'balance'   => $data['balance']?? null,
+            ]);
+            if(isset($getLastSMS)){
+                $cost_count_from_next = round($newSMS->balance - $getLastSMS->balance,4);
+                $new_balance_count_from_next = round($getLastSMS->balance - $cost_count_from_next,4);
+                $getLastSMS->update([
+                    'cost_count_from_next' => $cost_count_from_next,
+                    'new_balance_count_from_next' => $new_balance_count_from_next,
+                ]);
+            }
+
+            return response()->json(['status' => 'success', 'message' => 'Connected', 'data' => $request->all(),'otp_reply' => $sentResult], 200);
+        }else{
+            return response()->json(['status' => 'error', 'message' => 'Invalid Type'], 400);
+        }
     }
 
     public function otp_callback(Request $request)
