@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;
+use App\Jobs\SendTelegramAlertJob;
 use Illuminate\Support\Facades\Storage;
 
 class ApiController extends Controller
@@ -108,31 +109,23 @@ class ApiController extends Controller
                 ]);
             }
 
-            if($data['balance'] <= 50){
-                $this->sendToTelegramGroup("SMS360 Low Balance Alert: ".$data['balance']);
+            if ($data['balance'] <= 50) {
+                SendTelegramAlertJob::dispatch(
+                    "SMS360 Low Balance Alert: {$data['balance']}"
+                );
             }
-            if($after_wallet <= 50){
-                $this->sendToTelegramGroup("Low Balance Alert: ".$after_wallet." for Merchant Code: ".$findMerchant->merchant_code." - ".$findMerchant->username);
+
+            if ($after_wallet <= 50) {
+                SendTelegramAlertJob::dispatch(
+                    "Low Balance Alert: User: {$findMerchant->username} - Wallet: RM{$after_wallet}"
+                );
             }
+
 
             return response()->json(['status' => 'success', 'message' => 'Otp Sent'], 200);
         }else{
             return response()->json(['status' => 'error', 'message' => 'Invalid Type'], 400);
         }
-    }
-
-    public function sendToTelegramGroup($text)
-    {
-        $token = "8551923743:AAHuKjssWHf-hm5hWZOni1nGJFfhXqL-ngs";
-        $chatId = "-5223354543";
-
-        $url = "https://api.telegram.org/bot{$token}/sendMessage";
-
-        Http::post($url, [
-            'chat_id' => $chatId,
-            'text' => $text,
-            'parse_mode' => 'HTML'
-        ]);
     }
 
     public function otp_callback(Request $request)
