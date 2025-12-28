@@ -19,7 +19,6 @@ return new class extends Migration
             $table->double('amount')->nullable();
             $table->double('before_wallet')->nullable();
             $table->double('after_wallet')->nullable();
-            $table->string('code')->nullable();
             $table->string('desc')->nullable();
             $table->string('to')->nullable();
             $table->string('ref')->nullable();
