@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/send_otp', [App\Http\Controllers\ApiController::class, 'send_otp']);
+Route::post('/otp_callback', [App\Http\Controllers\ApiController::class, 'otp_callback']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -23,7 +23,13 @@ class User extends Authenticatable
         'email',
         'password',
         'contact_no',
-        'username'
+        'username',
+        'role_id',
+        'is_active',
+        'merchant_code',
+        'secret_key',
+        'api_token',
+        'wallet',
     ];
 
     /**
