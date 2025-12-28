@@ -96,6 +96,7 @@ class ApiController extends Controller
                 $getLastSMS->update([
                     'cost_count_from_next' => $cost_count_from_next,
                     'new_balance_count_from_next' => $new_balance_count_from_next,
+                    'earning' => round($getLastSMS->amount - $cost_count_from_next,4),
                 ]);
             }
 

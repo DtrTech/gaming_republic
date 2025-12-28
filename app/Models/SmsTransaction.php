@@ -23,5 +23,6 @@ class SmsTransaction extends Model
         'balance',
         'cost_count_from_next',
         'new_balance_count_from_next',
+        'earning',
     ];
 }
