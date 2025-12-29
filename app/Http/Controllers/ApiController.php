@@ -115,17 +115,17 @@ class ApiController extends Controller
                 ]);
             }
 
-            if ($data['balance'] <= 50) {
-                SendTelegramAlertJob::dispatch(
-                    "SMS360 Low Balance Alert: {$data['balance']}"
-                );
-            }
+            // if ($data['balance'] <= 50) {
+            //     SendTelegramAlertJob::dispatch(
+            //         "SMS360 Low Balance Alert: {$data['balance']}"
+            //     );
+            // }
 
-            if ($after_wallet <= 50) {
-                SendTelegramAlertJob::dispatch(
-                    "Low Balance Alert: User: {$findMerchant->username} - Wallet: RM{$after_wallet}"
-                );
-            }
+            // if ($after_wallet <= 50) {
+            //     SendTelegramAlertJob::dispatch(
+            //         "Low Balance Alert: User: {$findMerchant->username} - Wallet: RM{$after_wallet}"
+            //     );
+            // }
 
 
             return response()->json(['status' => 'success', 'message' => 'Otp Sent'], 200);
