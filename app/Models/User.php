@@ -30,6 +30,7 @@ class User extends Authenticatable
         'secret_key',
         'api_token',
         'wallet',
+        'type',
     ];
 
     /**
