@@ -45,7 +45,7 @@ class ApiController extends Controller
 
         $contact = '6'.$request->contact_no; 
         $smscode = $request->code; 
-        $message = "RM0 GRH, Your verification code is ".$smscode;
+        $message = "Your verification code is ".$smscode;
 
         if (
             SmsTransaction::where('contact_no', $contact)

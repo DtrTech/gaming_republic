@@ -141,7 +141,7 @@ class UserController extends Controller
 
         $contact = '6'.$request->contact_no; 
         $smscode = $this->randomNum(); 
-        $message = "RM0 GRH, Your verification code is ".$smscode;
+        $message = "Your verification code is ".$smscode;
 
         $this->url = $this->url . "&to=".$contact."&text=".rawurlencode($message);
 
