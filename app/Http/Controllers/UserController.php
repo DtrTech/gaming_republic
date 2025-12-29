@@ -38,7 +38,7 @@ class UserController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => ['required', 'string', 'unique:users,username,NULL,id,deleted_at,NULL', 'min:4', 'max:18', 'regex:/^[a-zA-Z0-9]+$/'],
+            'username' => ['required', 'string', 'unique:users,username,NULL,id,deleted_at,NULL', 'min:4', 'max:18'],
             'password' => ['required', 'string', 'min:8', 'confirmed']
         ], [
             'username.required' => 'The username is required.',
@@ -46,7 +46,6 @@ class UserController extends Controller
             'username.unique' => 'This username is already taken.',
             'username.min' => 'The username must be at least 4 characters.',
             'username.max' => 'The username may not be greater than 18 characters.',
-            'username.regex' => 'The username may only contain letters and numbers.',
             
             'password.required' => 'The password is required.',
             'password.string' => 'The password must be a string.',
@@ -96,7 +95,7 @@ class UserController extends Controller
     public function request_otp(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => ['required', 'string', 'unique:users,username,NULL,id,deleted_at,NULL', 'min:4', 'max:18', 'regex:/^[a-zA-Z0-9]+$/'],
+            'username' => ['required', 'string', 'unique:users,username,NULL,id,deleted_at,NULL', 'min:4', 'max:18',],
             'password' => ['required', 'string', 'min:8', 'confirmed']
         ], [
             'username.required' => 'The username is required.',
@@ -104,7 +103,6 @@ class UserController extends Controller
             'username.unique' => 'This username is already taken.',
             'username.min' => 'The username must be at least 4 characters.',
             'username.max' => 'The username may not be greater than 18 characters.',
-            'username.regex' => 'The username may only contain letters and numbers.',
             
             'password.required' => 'The password is required.',
             'password.string' => 'The password must be a string.',
