@@ -78,7 +78,7 @@ class ApiController extends Controller
 
             $data = json_decode($sentResult, true);
             if($data == null){
-                return response()->json(['status' => 'error', 'message' => 'OTP ERROR'], 500);
+                return response()->json(['status' => 'error', 'message' => 'OTP ERROR, Can Look for our customer support'], 500);
             }
             $smsType = SmsType::where('type', 'sms360myr')->first();
             $before_wallet = $findMerchant->wallet;
