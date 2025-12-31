@@ -77,6 +77,7 @@ class ApiController extends Controller
             } 
 
             $data = json_decode($sentResult, true);
+            return response()->json(['status' => 'success', 'data' => $data], 200);
             $smsType = SmsType::where('type', 'sms360myr')->first();
             $before_wallet = $findMerchant->wallet;
             $amount = $smsType->price ??0.12;
