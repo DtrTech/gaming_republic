@@ -18,7 +18,7 @@
         <h4>INTRODUCTION</h4>
         <ol>
             <li>
-                G Jewel is an online jewelry platform operated by Am Salam G Sdn Bhd (<b>“Company”, “we”, “us”, “our”</b>).These Terms of Service (<b>“Terms”</b>) govern your access to and use of <a href="{{ env('APP_URL', route('home') )}}" class="cr-main" target="_blank"> <font style="color: var(--theme-button-primary-background)">{{ env('APP_URL', route('home')) }}</font> </a>
+                G Jewel is an online jewelry platform operated by Am Salam Group Sdn Bhd (<b>“Company”, “we”, “us”, “our”</b>).These Terms of Service (<b>“Terms”</b>) govern your access to and use of <a href="{{ env('APP_URL', route('home') )}}" class="cr-main" target="_blank"> <font style="color: var(--theme-button-primary-background)">{{ env('APP_URL', route('home')) }}</font> </a>
                 (the <b>“Platform”</b>) and the purchase of gold jewelry and related products offered on the Platform (the <b>“Products”</b>).
             </li>
             <li>
