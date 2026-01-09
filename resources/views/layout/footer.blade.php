@@ -5,7 +5,7 @@
             <img class="logo" src="{{ asset('img/logo.png') }}">
         </div>
         <div class="col">
-            <h4>About GRH</h4>
+            <h4>About G Jewel</h4>
             <a href="{{ route('about_us') }}">About Us</a>
             <a href="{{ route('contact_us') }}">Contact Us</a>
         </div>
@@ -22,6 +22,6 @@
         </div>
     </div>
     <div class="row" style="margin:0 auto">
-        <p>© 2025 G Jewel. All Rights Reserved.</p>
+        <p>© 2026 Am Salam Group Sdn Bhd. All Rights Reserved.</p>
     </div>
 </footer>
