@@ -74,13 +74,13 @@
                             <input type="password" name="password_confirmation" autocomplete="off" required>
                         </div>
                         
-                        <div class="input-field input-otp">
+                        <!-- <div class="input-field input-otp">
                             <label>OTP Verification:</label>
                             <div>
                                 <input name="otp" type="text" autocomplete="off">
                                 <button id="btn-request-otp" type="button">Get OTP</button>
                             </div>
-                        </div>
+                        </div> -->
                         <div id="accept-tnc"> <input type="checkbox" name="read-"required/>I agree with the <a class='link' href="#">Terms & Conditions</a></div>
                         <button type="submit" class="btn btn-submit" onclick="showLoading()">Create Account</button>
                         <div id="no-account">Already have an account? <a class='link' href="#" onclick="$('#modal-register').hide();$('#modal-login').show();">Login Now</a></div>

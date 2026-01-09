@@ -72,19 +72,19 @@ class UserController extends Controller
         }
         $request->merge(['contact_no'=>$contact_no]);
 
-        $verification = UserOtp::where('contact_no',$request->contact_no)->first();
-        if($verification->verified == 1){
-            throw new Failed($request->contact_no.' has been taken by others.');
-        }
+        // $verification = UserOtp::where('contact_no',$request->contact_no)->first();
+        // if($verification->verified == 1){
+        //     throw new Failed($request->contact_no.' has been taken by others.');
+        // }
 
-        if($verification->code != $request->otp){
-            throw new Failed('Invalid OTP');
-        }
+        // if($verification->code != $request->otp){
+        //     throw new Failed('Invalid OTP');
+        // }
         $request->merge(['password'=>Hash::make($request->password),'email'=>$request->contact_no.'@gmail.com','role_id'=>2]);
         
         $user = User::create($request->all());
 
-        $verification->update(['verified'=>1,'verified_at'=>Carbon::now()]);
+        // $verification->update(['verified'=>1,'verified_at'=>Carbon::now()]);
 
         Auth::login($user);
 
