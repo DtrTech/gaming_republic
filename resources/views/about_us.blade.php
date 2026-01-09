@@ -57,16 +57,17 @@
         border: 1px solid #f1f1f1;
         border-radius: var(--radius);
         transform: scale(0.98);
-        transition: 0.3s
+        transition: 0.3s;
+        cursor: default;
     }
 
     #tri .item:hover{
-        background: var(--clr-primary);
+        background: var(--theme-background-selected-2);
         transform: scale(1);
     }
 
     #tri .item:hover h4, #tri .item:hover p {
-        color: white;
+        color: var(--theme-button-primary-background);
     }
 
     #tri .item img{
@@ -122,15 +123,15 @@
     <div class="row dou">
         <div class="col"><img src="{{ asset('img/about_us.png') }}"/></div>
         <div class="col">
-            <h2>About Gaming Republic Hub</h2>
-            <p>Gaming Republic Hub is a Malaysia-based company dedicated to serving the gaming community with innovative and reliable digital solutions. Founded by passionate gamers, we aim to create a hub where players can access everything they need to enhance their gaming experience. </p>
+            <h2>About G Jewel</h2>
+            <p>G Jewel is a Malaysia-based online jewelry brand specializing in exquisite gold accessories. Founded with a passion for timeless elegance and modern craftsmanship, we offer a curated collection of gold rings, bracelets, and other fine jewelry designed for everyday luxury and special moments. Our mission is to provide customers with high-quality, reliable, and beautifully crafted gold pieces that elevate personal style and celebrate lasting value.</p>
         </div>
     </div>
 
     <div class="row dou reverse">
         <div class="col">
             <h2>Service we offer</h2>
-            <p>We offers the most popular game merchandise and services for all gamers. And to ensure that every transaction can be completed easily, quickly and safely. GRH protects the consumers' funds and makes virtual goods transactions easier</p>
+            <p>We provide a curated selection of premium gold accessories, including rings, bracelets, and timeless jewelry pieces designed for everyday wear and special occasions. At G Jewel, we ensure every purchase is completed smoothly, securely, and with confidence—offering reliable service, trusted quality, and a seamless online shopping experience for our customers.</p>
         </div>
         <div class="col"><img src="{{ asset('img/services.png') }}"/></div>
     </div>
@@ -141,18 +142,18 @@
             <div class="col">
                 <div class="item">
                     <img src="{{ asset('img/empower.png') }}" />
-                    <h4>Empower Gamers</h4>
-                    <p>Provide a seamless platform that makes top-ups and game credits easy and accessible for all players.</p>
+                    <h4>Elevate Style</h4>
+                    <p>Offer beautifully crafted gold accessories that enhance personal style for everyday wear and special occasions.</p>
                 </div>
                 <div class="item">
                     <img src="{{ asset('img/trust.png') }}" />
                     <h4>Build Trust</h4>
-                    <p> Establish a secure, reliable, and customer-focused service that gamers can depend on.</p>
+                    <p>Provide authentic gold jewelry with transparent pricing, secure payments, and reliable customer service.</p></p>
                 </div>
                 <div class="item">
                     <img src="{{ asset('img/innovate.png') }}" />
-                    <h4>Innovate & Grow</h4>
-                    <p>Continuously evolve with the gaming industry, bringing new opportunities and better experiences to our community.</p>
+                    <h4>Grow with Elegance</h4>
+                    <p>Continuously expand our collections and services to meet modern trends while preserving timeless value.</p>
                 </div>
             </div>
         </div>

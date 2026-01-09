@@ -19,11 +19,11 @@
 
     .news .box:hover{
         transform: scale(1);
-        background: white;
+        background: white;  
     }
 
     .news .box:hover h4{
-        color: var(--clr-primary)
+        color: var(--theme-button-primary-background)
     }
 
     .news .box img{
@@ -63,38 +63,21 @@
 </div>
 @else
 <section>
-   
     <div class="row">
         <h2 class="page-title">News</h2>
     </div>
     <div class="row news">
-        <div class="box" onclick="window.location.href='{{ route('news.single', ['news'=>'genshin_impact_5_4']) }}'">
-            <img src="{{ asset('img/news/genshin-impact-5.4/cover.png') }}"/>
+        <div class="box" onclick="window.location.href='{{ route('news.single', ['news'=>'gold_prices_slip']) }}'">
+            <img src="{{ asset('img/news/gold-prices-slip/cover.png') }}"/>
             <div>
-                <h4>Genshin Impact "Moonlight Amidst Dreams" Update Highlights</h4>
+                <h4>Gold prices slip after early-week surge</h4>
             </div>
         </div>
 
-        <div class="box" onclick="window.location.href='{{ route('news.single', ['news'=>'wildest_fortnite_collaboration_skins']) }}'">
-            <img src="{{ asset('img/news/wildest-fortnite-collaboration-skins/cover.png') }}"/>
+        <div class="box" onclick="window.location.href='{{ route('news.single', ['news'=>'bernstein_lifts_gold_prices_target_for_2026']) }}'">
+            <img src="{{ asset('img/news/bernstein-lifts-gold-prices-target-for-2026/cover.png') }}"/>
             <div>
-                <h4>Wildest Fortnite Collaboration Skins</h4>
-            </div>
-        </div>
-
-        
-
-        <div class="box" onclick="window.location.href='{{ route('news.single', ['news'=>'star_rail_3_0']) }}'">
-            <img src="{{ asset('img/news/star-rail-3.0/cover.png') }}"/>
-            <div>
-                <h4>Honkai: Star Rail 3.0 – New Titans, Heroes & Epic Adventures Await!</h4>
-            </div>
-        </div>
-
-        <div class="box" onclick="window.location.href='{{ route('news.single', ['news'=>'fnatic_onic_emerges_as_m6_reigning_champions']) }}'">
-            <img src="{{ asset('img/news/fnatic-onic-emerges-as-m6-reigning-champions/cover.png') }}"/>
-            <div>
-                <h4>Fnatic ONIC Emerges As M6’s Reigning Champions</h4>
+                <h4>Bernstein lifts gold prices target for 2026</h4>
             </div>
         </div>
     </div>

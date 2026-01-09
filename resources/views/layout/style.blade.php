@@ -57,7 +57,7 @@
     #contact-info div span{
         font-size: 12px;
         font-weight: 600;
-        color: var(--clr-primary);
+        color: var(--theme-button-primary-background);
         text-transform: uppercase;
     
     }

@@ -140,14 +140,14 @@
             </div>
 
             <!-- GUIDE -->
-            <div class="box row">
+            <!-- <div class="box row">
                 <div id="guide-wrapper" class="box-content">
                     <h2 class="title">Guide</h2>
                     <div class="content">
                         {!! json_decode($product->guide) !!}
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- OTHERS -->
             @if(isset($product->others) && $product->others != null)

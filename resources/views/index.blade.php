@@ -2,7 +2,7 @@
 @section('content')
 <section class="product-section bg-white">
     <div class='row'>
-        <h2>Top Sales</h2>
+        <h2>Our Products</h2>
         <div class="products">
             @foreach($products as $product)
             @if($product->label == 'best')
@@ -24,7 +24,7 @@
     </div>
 </section>
 
-<section class="product-section bg-grey" >
+<!-- <section class="product-section bg-grey" >
     <div class="row">
         <h2>Trending Products</h2>
         <div class="products">
@@ -46,7 +46,7 @@
             @endforeach
         </div>
     </div>
-</section>
+</section> -->
 @endsection
 
 

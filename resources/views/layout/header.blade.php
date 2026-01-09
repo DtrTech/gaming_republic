@@ -4,7 +4,7 @@
             <img class="logo" src="{{ asset('img/logo.png') }}"/>
             <a href="{{ route('home') }}">Home</a>
             <a href="{{ route('news.index') }}">News</a>
-            <a href="{{ route('promotion.index') }}">Promotions</a>
+            <!-- <a href="{{ route('promotion.index') }}">Promotions</a> -->
             <a href="{{ route('about_us') }}">About Us</a>
             <a href="{{ route('contact_us') }}">Contact Us</a>
         </div>

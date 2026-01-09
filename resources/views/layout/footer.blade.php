@@ -13,7 +13,6 @@
             <h4>Links</h4>
             <a href="{{ route('home') }}">Products</a>
             <a href="{{ route('news.index') }}">News</a>
-            <a href="{{ route('promotion.index') }}">Promotions</a>
         </div>
         <div class="col">
             <h4>Terms & Policies</h4>
@@ -23,6 +22,6 @@
         </div>
     </div>
     <div class="row" style="margin:0 auto">
-        <p>© 2025 Gaming Republic Hub. All Rights Reserved.</p>
+        <p>© 2025 G Jewel. All Rights Reserved.</p>
     </div>
 </footer>

@@ -65,11 +65,12 @@
     }
 
     .link-return:hover {
-        color: var(--clr-primary);
+        color: var(--theme-button-primary-background);
     }
 
     .link-return:hover svg{
-        fill: var(--clr-primary);
+        fill:  var(--theme-button-primary-background);
+    }
     }
 
     @media only screen and (max-width:767px){

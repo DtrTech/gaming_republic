@@ -80,8 +80,8 @@
         <div class="col">
             <img src="{{ asset('img/contact.png') }}"/>
             <div id="contact-info">
-                <div><span>Email:</span>gamingrepublichub@outlook.com</div>
-                <div><span>Contact:</span>+60 1172621598</div>
+                <div><span>Email:</span>cs_gjewel@outlook.com</div>
+                <div><span>Contact:</span>+60 17 835 7368</div>
             </div>
         </div>
         <div class="col form-wrapper">

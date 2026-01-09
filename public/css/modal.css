@@ -127,7 +127,7 @@
     border-radius: 5px;
     border: none;
     color: white;
-    background: var(--clr-primary);
+    background: #000;
 }
 
 .modal-400{

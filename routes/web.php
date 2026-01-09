@@ -47,9 +47,18 @@ Route::prefix('/news')->as('news.')->group(function() {
     Route::get('/{news}', [App\Http\Controllers\NewsController::class, 'single'])->name('single');
 });
 
+// Route::prefix('/promotion')->as('promotion.')->group(function() {
+//     // Route::get('/', [App\Http\Controllers\PromotionController::class, 'index'])->name('index');
+//     // Route::get('/{promotion}', [App\Http\Controllers\PromotionController::class, 'single'])->name('single');
+// });
+
 Route::prefix('/promotion')->as('promotion.')->group(function() {
-    Route::get('/', [App\Http\Controllers\PromotionController::class, 'index'])->name('index');
-    Route::get('/{promotion}', [App\Http\Controllers\PromotionController::class, 'single'])->name('single');
+    Route::get('/', function(){
+        return view('index');
+    })->name('index');
+    Route::get('/{promotion}', function(){
+        return view('index');
+    })->name('single');
 });
 
 

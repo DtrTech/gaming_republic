@@ -61,10 +61,10 @@ section .row{
 
 .inner-header .product-descriptions .product-tags div{
     font-size: 12px;
-    background: black;
-    color: white;
+    color: #ffffff;
+    background: #bb9000;
     padding: 4px 8px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1;
     border-radius: 25px;
 }
@@ -261,7 +261,8 @@ section .row{
     align-items: center;
     min-width: 350px;
     padding: 5px;
-    justify-content: space-between
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 .product-variants .variant:hover{
@@ -270,8 +271,8 @@ section .row{
 }
 
 .product-variants .variant.active, .product-variants .variant.active:hover{
-    border: 2px solid var(--clr-primary);
-    background: rgb(226 0 0 / 5%);
+    border: var(--theme-border-style);
+    background: var(--theme-background-selected-2);
 }
 
 .product-variants .variant .variant-info{
@@ -320,10 +321,9 @@ section .row{
     text-transform: uppercase;
     transition: 0.3s;
     font-size: 14px;
-    background: white;
     border: none;
-    background: var(--clr-primary);
-    color: white;
+    background: var(--theme-button-primary-background);
+    color: var(--theme-button-primary-color);
     padding: 15px;
     width: 90%;
     margin: 0 5%;
@@ -381,6 +381,10 @@ section .row{
     border-radius: var(--radius);
     align-items: center;
     margin-bottom: 10px;
+}
+
+.others-product-wrapper .product:hover{
+    background: var(--theme-background-selected-2);
 }
 
 .others-product-wrapper .product img{
@@ -470,7 +474,8 @@ section .row{
     }
 
     .inner-header .content{
-        flex-direction: column
+        flex-direction: column;
+        align-items: center;
     }
 
     .inner-header .product-image{
