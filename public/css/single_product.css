@@ -9,7 +9,7 @@ section .row{
 .inner-header{
     height: 200px;
     width: 100%;
-    background: var(--clr-primary);
+    background: #000;
     background-image: url("../img/background.png");
     background-size: cover;
     background-color: linear-gradient(red red);
@@ -227,7 +227,7 @@ section .row{
     transition: 0.3s;
     font-size: 14px;
     border: none;
-    background: var(--clr-primary);
+    background: var(--theme-button-primary-background);
     color: white;
     padding: 15px;
 }
@@ -331,11 +331,11 @@ section .row{
 
 .box-content a{
     font-weight: 700;
-    color: var(--clr-primary);
+    color: var(--theme-button-primary-background);
 }
 
 .box-content a:hover{
-    color: var(--clr-hover);
+    color: var(--theme-button-primary-background-hover);
 }
 
 .box-content h4{
