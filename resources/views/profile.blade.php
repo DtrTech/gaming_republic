@@ -29,7 +29,7 @@
 
             <div>
                 <label>Membership:</label>
-                <span>GRH Member</span>
+                <span>GJEWEL Member</span>
             </div>
         </div>
     </div>
