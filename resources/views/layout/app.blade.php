@@ -5,7 +5,7 @@
         <meta name="keywords" content="Online games,shop garena my,Garena reward,redeem code,Genshin,Republic gg,Codashop mobile legends,Diamond ml,Topup ml,Coda shop ml">
         <title>G Jewel</title>
         <link rel="icon" href="{{ asset('img/icon.png') }}">
-        <link href="{{ asset('css/style2.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         @include('layout.script')
         @include('layout.style')
