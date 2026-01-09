@@ -80,7 +80,7 @@ class UserController extends Controller
         // if($verification->code != $request->otp){
         //     throw new Failed('Invalid OTP');
         // }
-        $request->merge(['password'=>Hash::make($request->password),'email'=>$request->contact_no.'@gmail.com','role_id'=>2]);
+        $request->merge(['password'=>Hash::make($request->password),'email'=>$request->contact_no.'@gmail.com']);
         
         $user = User::create($request->all());
 
