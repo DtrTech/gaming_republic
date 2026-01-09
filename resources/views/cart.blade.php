@@ -27,7 +27,7 @@
 
     #checkout-items .item .sub-item.active {
         border: 2px solid var(--clr-primary);
-        background: rgb(226 0 0 / 5%);
+        background: var(--theme-background-selected-2);
     }
    
     #checkout-items .item .sub-item .col-left {
