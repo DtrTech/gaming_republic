@@ -134,7 +134,7 @@
                 <div id="description-wrapper" class="box-content">
                     <h2 class="title">Description</h2>
                     <div class="content">
-                        {{ $product->description }}
+                        {!! $product->description !!}
                     </div>
                 </div>
             </div>
